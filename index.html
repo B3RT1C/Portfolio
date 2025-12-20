@@ -1,1 +1,83 @@
-<h1>TEST</h1>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/main.css">
+        <title>Portfolio</title>
+        <link rel="icon" href="/img/beartic.png">
+    </head>
+    <body id="top">
+        <header>
+            <nav>
+                <a href="#top"><img id="nombre" src="/img/name.png"></a>
+                <img id="hylicsRunning" src="/img/hylics_running.gif">
+                <ul class="borderGroove" id="navLinks">
+                    <li><a class="link" href="#aboutMe">Sobre mí</a></li>
+                    <li><a class="link" href="#experience">Experiencia</a></li>
+                    <li><a class="link" href="#projects">Projectos</a></li>
+                    <li><a class="link" href="#skills">Habilidades</a></li>
+                    <li><a class="link" href="#contact">Contacto</a></li>
+                    <li><a class="link" href="/AlbertoPerezCV.pdf">CV</a></li>
+                </ul>
+                <img onclick="toggleSidebar()" id="sidebarButton" src="/img/hamburger.png">
+                <div id="sidebar" class="borderGroove">
+                    <ul>
+                        <li><a class="link" href="#aboutMe">Sobre mí</a></li>
+                        <li><a class="link" href="#experience">Experiencia</a></li>
+                        <li><a class="link" href="#projects">Projectos</a></li>
+                        <li><a class="link" href="#skills">Habilidades</a></li>
+                        <li><a class="link" href="#contact">Contacto</a></li>
+                        <li><a class="link" href="/AlbertoPerezCV.pdf">CV</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section id="aboutMe">
+                <div class="section">
+                    <div id="aboutMeHeader">
+                        <h1>Sobre mí</h1>
+                        <img class="borderGroove" style="max-width: 200px; display: flex; margin-left: auto;" id="jordi" src="/img/JordiHurtado.jpg">
+                    </div>
+                    <p>Soy desarrollador de software con una profunda pasión por la tecnología y la programación. En mi tiempo libre me gusta trabajar en proyectos personales y explorar nuevas herramientas de desarrollo.</p>
+                    <p>He trabajado con tecnologías como Java/Spring, TypeScript/Angular, SQL y Git, además tengo conocimientos en otros lenguajes y herramientas como Kotlin, Lua, Linux y más.</p>
+                    <p>Me considero una persona curiosa y creativa, a la que le encanta experimentar con nuevas ideas y probar diferentes enfoques para resolver problemas. Por mi cuenta, estoy aprendiendo a usar Linux y muchas de las herramientas que ofrece para optimizar mi flujo de trabajo como desarrollador.</p>
+                </div>
+            </section>
+            <section id="experience">
+                <div class="section">
+                    <h1>Experiencia</h1>
+                    <h2>Dev&Del</h2>
+                    <h3>Full Stack Junior / Marzo 2025 - Julio 2025</h3>
+                    <p>Desarrollé funcionalidades full stack para una aplicación web. En frontend, diseñé e implementé interfaces de usuario utilizando Angular y TypeScript. En backend, diseñé APIs RESTful y desarrollé la lógica de negocio con Java y Spring. Formé parte de un equipo colaborativo, participando en revisiones de código, reuniones y aportando ideas para el desarrollo del proyecto.</p>
+                </div>
+            </section>
+            <section id="projects">
+                <div class="section">
+                    <h1>Projectos</h1>
+                    <h2>Sistema de gestión de pedidos en restaurantes</h2>
+                    <h3>Agosto 2025 - Noviembre 2025</h3>
+                    <p>Aplicación web autoalojada para restaurantes que centraliza la gestión de pedidos, menú, usuarios y pagos, con roles diferenciados para administradores y camareros.</p>
+                    <p>Diseñé e implementé una API RESTful con Spring Boot y Java aplicando arquitectura en capas (Controller-Service-Repository), autenticación JWT con Spring Security, control de acceso basado en roles, validación de datos, manejo global de excepciones y operaciones CRUD completas.</p>
+                    <p>Desarrollé el frontend con Angular y TypeScript utilizando Angular Material para interfaces responsivas, implementando guards para protección de rutas, interceptors HTTP para gestión de tokens, formularios reactivos con validación y navegación multi-página optimizada por roles.</p>
+                </div>
+            </section>
+            <section id="skills">
+                <div class="section">
+                    <h1>Habilidades</h1>
+                </div>
+            </section>
+            <section id="contact">
+                <div class="section">
+                    <h1>Contacto</h1>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <img id="staffWizard" src="/img/staffwizard.gif">
+        </footer>
+        <script src="/app.js"></script>
+    </body>
+</html>
