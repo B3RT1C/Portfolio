@@ -9,10 +9,9 @@
     <body id="top">
         <header>
             <nav>
-                <a href="#top"><img id="nombre" src="/img/name.png"></a>
+                <a href="#aboutMe"><img id="nombre" src="/img/name.png"></a>
                 <img id="hylicsRunning" src="/img/hylics_running.gif">
-                <ul class="borderGroove" id="navLinks">
-                    <li><a class="link" href="#aboutMe">Sobre mí</a></li>
+                <ul id="navLinks">
                     <li><a class="link" href="#experience">Experiencia</a></li>
                     <li><a class="link" href="#projects">Projectos</a></li>
                     <li><a class="link" href="#skills">Habilidades</a></li>
@@ -22,7 +21,6 @@
                 <img onclick="toggleSidebar()" id="sidebarButton" src="/img/hamburger.png">
                 <div id="sidebar" class="borderGroove">
                     <ul>
-                        <li><a class="link" href="#aboutMe">Sobre mí</a></li>
                         <li><a class="link" href="#experience">Experiencia</a></li>
                         <li><a class="link" href="#projects">Projectos</a></li>
                         <li><a class="link" href="#skills">Habilidades</a></li>
@@ -37,8 +35,12 @@
             <section id="aboutMe">
                 <div class="section">
                     <div id="aboutMeHeader">
-                        <h1>Sobre mí</h1>
-                        <img class="borderGroove" style="max-width: 200px; display: flex; margin-left: auto;" id="jordi" src="/img/JordiHurtado.jpg">
+                        <h1>
+                            <img src="/img/duke.gif">
+                            Sobre mí
+                            <img src="/img/duke.gif">
+                        </h1>
+                        <img class="borderGroove" src="/img/me.png">
                     </div>
                     <p>Soy desarrollador de software con una profunda pasión por la tecnología y la programación. En mi tiempo libre me gusta trabajar en proyectos personales y explorar nuevas herramientas de desarrollo.</p>
                     <p>He trabajado con tecnologías como Java/Spring, TypeScript/Angular, SQL y Git, además tengo conocimientos en otros lenguajes y herramientas como Kotlin, Lua, Linux y más.</p>
@@ -47,25 +49,68 @@
             </section>
             <section id="experience">
                 <div class="section">
-                    <h1>Experiencia</h1>
-                    <h2>Dev&Del</h2>
-                    <h3>Full Stack Junior / Marzo 2025 - Julio 2025</h3>
-                    <p>Desarrollé funcionalidades full stack para una aplicación web. En frontend, diseñé e implementé interfaces de usuario utilizando Angular y TypeScript. En backend, diseñé APIs RESTful y desarrollé la lógica de negocio con Java y Spring. Formé parte de un equipo colaborativo, participando en revisiones de código, reuniones y aportando ideas para el desarrollo del proyecto.</p>
+                    <h1>
+                        <img id="exp" src="/img/exp.gif">
+                        <img id="exp" src="/img/exp.gif">
+                        <img id="exp" src="/img/exp.gif">
+                        Experiencia
+                        <img id="exp" src="/img/exp.gif">
+                        <img id="exp" src="/img/exp.gif">
+                        <img id="exp" src="/img/exp.gif">
+                    </h1>
+                    <div class="titleDate">
+                        <h2>Dev&Del</h2>
+                        <h3>Full Stack Junior / Marzo 2025 - Julio 2025</h3>
+                    </div>
+                    <p>
+                        • Desarrollé funcionalidades para una aplicación web del sector asegurador en un pequeño equipo, implementando soluciones desde frontend con Angular y Angular Material hasta backend con Java Spring.
+                        <br>
+                        • Diseñé e implementé componentes de interfaz responsivos utilizando Angular Material, diagnostiqué y resolví bugs.
+                        <br>
+                        • Construí endpoints RESTful en backend Java Spring, implementando lógica de negocio, validaciones y manejo de errores.
+                        <br>
+                        • Participé activamente en ceremonias ágiles incluyendo daily standups, sprint planning y code reviews, contribuyendo con propuestas técnicas para mejora continua del proyecto.
+                        <br>
+                        • Gestioné control de versiones mediante Git y utilicé Holded para seguimiento y organización de tareas asignadas.
+                    </p>
+                    <p><b>Tecnologías:</b> Angular, Angular Material, TypeScript, Java, Spring Boot, RESTful APIs, Git, Holded</p>
                 </div>
             </section>
             <section id="projects">
                 <div class="section">
                     <h1>Projectos</h1>
-                    <h2>Sistema de gestión de pedidos en restaurantes</h2>
-                    <h3>Agosto 2025 - Noviembre 2025</h3>
-                    <p>Aplicación web autoalojada para restaurantes que centraliza la gestión de pedidos, menú, usuarios y pagos, con roles diferenciados para administradores y camareros.</p>
-                    <p>Diseñé e implementé una API RESTful con Spring Boot y Java aplicando arquitectura en capas (Controller-Service-Repository), autenticación JWT con Spring Security, control de acceso basado en roles, validación de datos, manejo global de excepciones y operaciones CRUD completas.</p>
-                    <p>Desarrollé el frontend con Angular y TypeScript utilizando Angular Material para interfaces responsivas, implementando guards para protección de rutas, interceptors HTTP para gestión de tokens, formularios reactivos con validación y navegación multi-página optimizada por roles.</p>
+                    <div class="titleDate">
+                        <h2>Sistema de gestión de pedidos en restaurantes</h2>
+                        <h3>Agosto 2025 - Noviembre 2025</h3>
+                    </div>
+                    <p>
+                        • Desarrollé funcionalidades para una aplicación web del sector asegurador en un pequeño equipo, implementando soluciones desde frontend con Angular y Angular Material hasta backend con Java Spring.
+                        <br>
+                        • Diseñé e implementé componentes de interfaz responsivos utilizando Angular Material, diagnostiqué y resolví bugs.
+                        <br>
+                        • Construí endpoints RESTful en backend Java Spring, implementando lógica de negocio, validaciones y manejo de errores.
+                        <br>
+                        • Participé activamente en ceremonias ágiles incluyendo daily standups, sprint planning y code reviews, contribuyendo con propuestas técnicas para mejora continua del proyecto.
+                        <br>
+                        • Gestioné control de versiones mediante Git y utilicé Holded para seguimiento y organización de tareas asignadas.
+                    </p>
+                    <p><b>Technologías:</b> Java 21, Spring Boot, PostgreSQL, Angular 19, TypeScript, RxJS, Angular Material, WebSockets, JWT, Docker, Maven, Git</p>
                 </div>
             </section>
             <section id="skills">
                 <div class="section">
                     <h1>Habilidades</h1>
+                    <h2>Lenguajes de programación</h2>
+                    <p>Java <img id="duke" src="/img/duke.gif">, TypeScript, SQL, Lua</p>
+                    <img class="contentSeparator" src="/img/contentSeparator.gif">
+                    <h2>Tecnologías Backend</h2>
+                    <p>Spring Boot, PostgreSQL, MongoDB, Maven</p>
+                    <img class="contentSeparator" src="/img/contentSeparator.gif">
+                    <h2>Tecnologías Frontend</h2>
+                    <p>Angular, HTML, CSS</p>
+                    <img class="contentSeparator" src="/img/contentSeparator.gif">
+                    <h2>Herramientas de desarrollo</h2>
+                    <p>Git, GitHub, VSCode, IntelliJ, Eclipse, Linux, VIM motions, Docker</p>
                 </div>
             </section>
             <section id="contact">

@@ -3,21 +3,19 @@ html {
 }
 
 body {
-    font-family: "Comic Sans MS";
+    font-size: large;
     background-image: url("/img/body_background_120x200.gif");
     background-size: 180px 250px;
 }
 
 header {
+    font-family: "Comic Sans MS";
     background-image: url("/img/header_background.jpeg");
-
     min-width: fit-content;
-
     display: flex;
     border: groove;
     border-width: 9px;
     border-color: cadetblue;
-
     position: sticky;
     top: 8px;
 }
@@ -27,7 +25,6 @@ nav {
     width: 100%;
     padding: 0px 10px;
     white-space: nowrap;
-
     display: flex;
     align-items: center;
 }
@@ -35,7 +32,6 @@ nav {
 #navLinks {
     width: 100%;
     padding: 0;
-
     display: flex;
     justify-content: flex-end;
 }
@@ -68,16 +64,13 @@ nav {
 
 #sidebar {
     display: none;
-
     background-image: url("/img/header_background.jpeg");
     max-width: fit-content;
     min-width: fit-content;
     padding: 10px;
-
     position: absolute;
     top: 59px;
     right: -9px;
-
     display: flex;
     flex-direction: column;
 }
@@ -103,7 +96,6 @@ nav {
     #sidebarButton {
         width: 40px;
         height: auto;
-
         display: flex;
         margin-left: auto;
     }
@@ -119,16 +111,15 @@ section {
     margin-top: -50px;
     padding-top: 100px;
     margin-bottom: 150px;
-
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
 .section {
-    max-width: 70%;
-    width: 100%;
-    min-height: fit-content;
+    width: 70%;
+    padding: 10px;
+    min-width: 1000px;
     border: dotted;
     border-color: cyan;
     background-color: black;
@@ -138,8 +129,13 @@ section {
     flex-direction: column;
 }
 
-.section p {
+.section h1 {
+    color: cyan;
     text-align: center;
+}
+
+.section h2, h3 {
+    color: darkturquoise;
 }
 
 #aboutMeHeader {
@@ -147,8 +143,17 @@ section {
 }
 
 #aboutMeHeader h1 {
+    width: 100%;
+    white-space: nowrap;
     display: flex;
     align-items: end;
+    justify-content: center;
+    padding: 0px 0px 0px 205px;
+}
+
+#aboutMeHeader > img {
+    width: 200px;
+    background-image: url("/img/header_background.jpeg");
 }
 
 footer {
@@ -165,4 +170,26 @@ footer {
     border: groove;
     border-width: 9px;
     border-color: cadetblue;
+}
+
+.titleDate {
+    display: flex;
+    justify-content: space-between;
+    white-space: nowrap;
+    min-width: fit-content;
+}
+
+#exp {
+    height: 50px;
+    width: auto;
+}
+
+.contentSeparator {
+    height: 10px;
+    margin: 10px 0px;
+}
+
+#java {
+    height: 70px;
+    width: auto;
 }
