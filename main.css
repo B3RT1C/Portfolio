@@ -220,6 +220,7 @@ figure figcaption {
 
 .skillList {
     display: flex;
+    flex-wrap: wrap;
 }
 
 #links {
