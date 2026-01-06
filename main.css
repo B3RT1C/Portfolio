@@ -88,18 +88,6 @@ nav {
     display: none;
 }
 
-@media(width < 1225px) {
-    #navLinks {
-        display: none;
-    }
-
-    #sidebarButton {
-        width: 40px;
-        height: auto;
-        display: flex;
-        margin-left: auto;
-    }
-}
 
 main {
     display: flex;
@@ -139,24 +127,16 @@ section {
 #aboutMeHeader {
     display: flex;
     align-items: end;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #aboutMeHeader h1 {
-    width: 100%;
-    height: fit-content;
+    flex: 1;
     white-space: nowrap;
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    padding: 0px 0px 0px 205px;
 }
 
-#aboutMeHeader > h1 > img {
-    align-self: center;
-    padding: 10px;
-}
-
-#aboutMeHeader > img {
+#me {
     width: 200px;
     background-image: url("/img/header_background.jpeg");
 }
@@ -180,7 +160,6 @@ footer {
 .titleDate {
     display: flex;
     justify-content: space-between;
-    white-space: nowrap;
     flex-wrap: wrap;
     min-width: fit-content;
 }
@@ -232,4 +211,26 @@ figure figcaption {
 #emailMe {
     position: relative;
     top: 10px;
+}
+
+@media(width < 1320px) {
+    #navLinks {
+        display: none;
+    }
+
+    #sidebarButton {
+        width: 40px;
+        height: auto;
+        display: flex;
+        margin-left: auto;
+    }
+
+    body {
+        font-size: x-large;
+    }
+
+
+    #aboutMeHeader h1 {
+        padding: 0px;
+    }
 }
