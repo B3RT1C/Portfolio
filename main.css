@@ -162,6 +162,7 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
     min-width: fit-content;
+    align-items: end;
 }
 
 #exp {
@@ -206,6 +207,15 @@ figure figcaption {
     height: 50px;
     width: auto;
     position: absolute;
+}
+
+#clickHereLink {
+    padding: 0px 10px 0px 10px;
+}
+
+#clickHere {
+    height: 50px;
+    width: auto;
 }
 
 #emailMe {
