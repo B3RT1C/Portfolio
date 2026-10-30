@@ -1,0 +1,39 @@
+Recursos de terceros usados en este portfolio
+=============================================
+
+1. Comic Neue (respaldo de Comic Sans)
+   Autor: Craig Rozynski y The Comic Neue Project Authors
+   https://github.com/crozynski/comicneue
+   https://github.com/google/fonts/tree/main/ofl/comicneue
+   Licencia: SIL Open Font License 1.1 (texto completo en fonts/OFL.txt)
+   Archivos: fonts/comic-neue-400.woff2 y fonts/comic-neue-700.woff2
+   (subconjunto latino publicado por Fontsource 5.2.1, misma familia y licencia)
+
+2. Iconos Devicon v2.18.0
+   https://github.com/devicons/devicon/tree/v2.18.0
+   Licencia: MIT. Copyright (c) 2015 konpa.
+   El texto completo de la licencia está en img/icons/LICENSE-DEVICON.txt
+   Archivos:
+     img/icons/playwright.svg
+     img/icons/karate.svg        (icono karatelabs)
+     img/icons/cucumber.svg
+     img/icons/javascript.svg
+     img/icons/postman.svg
+     img/icons/swagger.svg
+     img/icons/jira.svg
+     img/icons/testrail.svg
+     img/icons/jenkins.svg
+
+3. Obra original de esta web (no son logos oficiales)
+   img/icons/xray.svg
+   img/icons/gherkin.svg
+   img/cursor.png
+   img/cursor-pointer.png
+   img/og.png (composición con el retrato ya existente en el sitio)
+   Botones 88x31 del pie, hechos en CSS, sin imágenes de terceros.
+
+Los logos que ya estaban en img/ (Java, Angular, PostgreSQL, etc.) se
+conservan. No se han añadido iconos de marcas cuya redistribución se
+retiró por marca registrada (por ejemplo el logo de Playwright que
+Simple Icons eliminó). Playwright, Karate y el resto de la lista de
+arriba entran por la licencia MIT de Devicon.
