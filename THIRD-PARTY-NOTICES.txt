@@ -1,15 +1,25 @@
 Recursos de terceros usados en este portfolio
 =============================================
 
-1. Comic Neue (respaldo de Comic Sans)
+1. VT323 (títulos, menú, botones y etiquetas)
+   Autor: Peter Hull y The VT323 Project Authors (peter.hull@oikoi.com)
+   https://github.com/phoikoi/VT323
+   https://github.com/google/fonts/tree/main/ofl/vt323
+   Licencia: SIL Open Font License 1.1 (texto completo en fonts/OFL-VT323.txt)
+   Archivo: fonts/vt323-latin-400.woff2
+   Subconjunto latino de Fontsource 5.2.6 (unicode Latin, incluye español),
+   servido en local con font-display: swap. Unos 17 KB.
+
+2. Comic Neue (texto de lectura)
    Autor: Craig Rozynski y The Comic Neue Project Authors
    https://github.com/crozynski/comicneue
    https://github.com/google/fonts/tree/main/ofl/comicneue
    Licencia: SIL Open Font License 1.1 (texto completo en fonts/OFL.txt)
    Archivos: fonts/comic-neue-400.woff2 y fonts/comic-neue-700.woff2
    (subconjunto latino publicado por Fontsource 5.2.1, misma familia y licencia)
+   Es la sans del cuerpo. Si no carga, el respaldo es Segoe UI, Verdana y sans-serif.
 
-2. Iconos Devicon v2.18.0
+3. Iconos Devicon v2.18.0
    https://github.com/devicons/devicon/tree/v2.18.0
    Licencia: MIT. Copyright (c) 2015 konpa.
    El texto completo de la licencia está en img/icons/LICENSE-DEVICON.txt
@@ -28,7 +38,7 @@ Recursos de terceros usados en este portfolio
        a la franja del texto para que se lea en la rejilla. El trazado
        y el color no se han redibujado.
 
-3. Obra original de esta web (no son logos oficiales)
+4. Obra original de esta web (no son logos oficiales)
    img/icons/xray.svg
    img/icons/gherkin.svg
    img/win-controls.svg

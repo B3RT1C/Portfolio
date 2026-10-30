@@ -1,15 +1,11 @@
 const sidebar = document.getElementById("sidebar");
 const sidebarButton = document.getElementById("sidebarButton");
-const sidebarIcon = document.getElementById("sidebarIcon");
-
-const openIcon = "/img/hamburger.png";
-const closeIcon = "/img/x.png";
 
 function setSidebar(open) {
     sidebar.hidden = !open;
     sidebarButton.setAttribute("aria-expanded", open ? "true" : "false");
     sidebarButton.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
-    sidebarIcon.src = open ? closeIcon : openIcon;
+    sidebarButton.textContent = open ? "Cerrar" : "Menú";
 }
 
 sidebarButton.addEventListener("click", function () {
@@ -23,9 +19,15 @@ sidebarButton.addEventListener("click", function () {
     }
 });
 
-sidebar.querySelectorAll("a").forEach(function (link) {
+document.querySelectorAll("#sidebar a").forEach(function (link) {
     link.addEventListener("click", function () {
         setSidebar(false);
+    });
+});
+
+document.querySelectorAll("[data-nav]").forEach(function (link) {
+    link.addEventListener("click", function () {
+        setCurrent(link.getAttribute("data-nav"));
     });
 });
 
@@ -45,6 +47,42 @@ document.addEventListener("click", function (event) {
     }
     setSidebar(false);
 });
+
+const sections = document.querySelectorAll("main section[id]");
+const ratios = new Map();
+
+function setCurrent(id) {
+    document.querySelectorAll("[data-nav]").forEach(function (link) {
+        if (id && link.getAttribute("data-nav") === id) {
+            link.setAttribute("aria-current", "true");
+        } else {
+            link.removeAttribute("aria-current");
+        }
+    });
+}
+
+if ("IntersectionObserver" in window && sections.length) {
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            ratios.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0);
+        });
+        let bestId = null;
+        let best = 0;
+        ratios.forEach(function (ratio, id) {
+            if (ratio > best) {
+                best = ratio;
+                bestId = id;
+            }
+        });
+        setCurrent(bestId && bestId !== "top" ? bestId : null);
+    }, {
+        rootMargin: "-12% 0px -55% 0px",
+        threshold: [0.05, 0.2, 0.45, 0.7]
+    });
+    sections.forEach(function (section) {
+        observer.observe(section);
+    });
+}
 
 const digits = document.getElementById("hitDigits");
 try {
