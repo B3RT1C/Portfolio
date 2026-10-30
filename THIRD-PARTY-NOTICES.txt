@@ -23,14 +23,22 @@ Recursos de terceros usados en este portfolio
      img/icons/jira.svg
      img/icons/testrail.svg
      img/icons/jenkins.svg
+     img/icons/oracle.svg
+       Wordmark de Devicon (oracle-original.svg). El viewBox se recortó
+       a la franja del texto para que se lea en la rejilla. El trazado
+       y el color no se han redibujado.
 
 3. Obra original de esta web (no son logos oficiales)
    img/icons/xray.svg
    img/icons/gherkin.svg
+   img/win-controls.svg
+     Botones decorativos _ □ × de las barras de título. Dibujo propio,
+     inspirado en la forma de 98.css, sin copiar su código.
    img/cursor.png
-   img/cursor-pointer.png
    img/og.png (composición con el retrato ya existente en el sitio)
    Botones 88x31 del pie, hechos en CSS, sin imágenes de terceros.
+   Divisores de puntos, rayas de "en obras" y dígitos del contador:
+   solo CSS.
 
 Los logos que ya estaban en img/ (Java, Angular, PostgreSQL, etc.) se
 conservan. No se han añadido iconos de marcas cuya redistribución se
