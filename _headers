@@ -1,0 +1,12 @@
+# HTML, CSS y JS se revalidan siempre. Fuentes e imágenes no se tocan.
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.js
+  Cache-Control: public, max-age=0, must-revalidate
