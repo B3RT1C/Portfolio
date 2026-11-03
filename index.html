@@ -2,225 +2,480 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Alberto Pérez Navarro – QA Automation Engineer</title>
+        <meta name="description" content="Portfolio de Alberto Pérez Navarro, QA Automation Engineer / SDET en Valdemoro. Automatización con Playwright, Karate y Cucumber, y base en Java y Angular.">
+        <meta property="og:title" content="Alberto Pérez Navarro – QA Automation Engineer">
+        <meta property="og:description" content="Portfolio de Alberto Pérez Navarro, QA Automation Engineer / SDET en Valdemoro. Automatización con Playwright, Karate y Cucumber, y base en Java y Angular.">
+        <meta property="og:image" content="https://b3rt1c.net/img/og.png">
+        <meta property="og:url" content="https://b3rt1c.net">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="es_ES">
+        <link rel="icon" href="/img/beartic.png" type="image/png">
         <link rel="stylesheet" href="/main.css">
-        <title>Portfolio</title>
-        <link rel="icon" href="/img/beartic.png">
     </head>
-    <body id="top">
-        <header>
-            <nav>
-                <a href="#aboutMe"><img id="nombre" src="/img/name.png"></a>
-                <img id="hylicsRunning" src="/img/hylics_running.gif">
+    <body>
+        <a class="skip" href="#top">Saltar al contenido</a>
+        <header class="taskbar">
+            <nav class="tasknav" aria-label="Principal">
+                <a class="task-brand" href="#top">b3rt1c</a>
                 <ul id="navLinks">
-                    <li><a class="link" href="#experience">Experiencia</a></li>
-                    <li><a class="link" href="#projects">Proyectos</a></li>
-                    <li><a class="link" href="#skills">Habilidades</a></li>
-                    <li><a class="link" href="#education">Educación</a></li>
-                    <li><a class="link" href="#contact">Contacto</a></li>
-                    <li><a class="link" href="/AlbertoPerezCV.pdf">CV</a></li>
+                    <li><a class="task-link" href="#aboutMe" data-nav="aboutMe">Sobre mí</a></li>
+                    <li><a class="task-link" href="#experience" data-nav="experience">Experiencia</a></li>
+                    <li><a class="task-link" href="#skills" data-nav="skills">Herramientas</a></li>
+                    <li><a class="task-link" href="#projects" data-nav="projects">Proyectos</a></li>
+                    <li><a class="task-link" href="#education" data-nav="education">Formación</a></li>
+                    <li><a class="task-link" href="#contratame" data-nav="contratame">Contrátame</a></li>
+                    <li><a class="task-link" href="#contact" data-nav="contact">Contacto</a></li>
+                    <li><a class="task-link" href="/AlbertoPerezCV.pdf">CV</a></li>
                 </ul>
-                <img onclick="toggleSidebar()" id="sidebarButton" src="/img/hamburger.png">
-                <div id="sidebar" class="borderGroove">
+                <span class="task-tray">Valdemoro</span>
+                <button type="button" id="sidebarButton" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar">Menú</button>
+                <div id="sidebar" hidden>
                     <ul>
-                        <li><a class="link" href="#experience">Experiencia</a></li>
-                        <li><a class="link" href="#projects">Proyectos</a></li>
-                        <li><a class="link" href="#skills">Habilidades</a></li>
-                        <li><a class="link" href="#contact">Contacto</a></li>
-                        <li><a class="link" href="#education">Educación</a></li>
-                        <li><a class="link" href="/AlbertoPerezCV.pdf">CV</a></li>
+                        <li><a class="task-link" href="#aboutMe" data-nav="aboutMe">Sobre mí</a></li>
+                        <li><a class="task-link" href="#experience" data-nav="experience">Experiencia</a></li>
+                        <li><a class="task-link" href="#skills" data-nav="skills">Herramientas</a></li>
+                        <li><a class="task-link" href="#projects" data-nav="projects">Proyectos</a></li>
+                        <li><a class="task-link" href="#education" data-nav="education">Formación</a></li>
+                        <li><a class="task-link" href="#contratame" data-nav="contratame">Contrátame</a></li>
+                        <li><a class="task-link" href="#contact" data-nav="contact">Contacto</a></li>
+                        <li><a class="task-link" href="/AlbertoPerezCV.pdf">CV</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
 
+        <p class="visually-hidden">QA Automation Engineer / SDET desde febrero de 2026. Playwright, Karate, Cucumber, JavaScript, Jira, Xray, TestRail, Oracle, Java y Angular. Valdemoro.</p>
+
         <main>
-            <section id="aboutMe">
-                <div class="section">
-                    <div id="aboutMeHeader">
+            <section id="top">
+                <div class="section hero">
+                    <div class="hero-bar">
+                        <span>b3rt1c.net</span>
+                        <img class="win-controls" src="/img/win-controls.svg" width="62" height="18" alt="" aria-hidden="true">
+                    </div>
+                    <div class="glitter">
                         <h1>
-                            <img src="/img/star.gif">
-                            Sobre mí
-                            <img src="/img/star.gif">
+                            <img id="nombre" src="/img/name.png" width="900" height="88" alt="Alberto Pérez Navarro">
                         </h1>
-                        <img id="me" class="borderGroove" src="/img/me.png">
+                        <img id="hylicsRunning" src="/img/hylics_running.gif" width="270" height="140" alt="">
                     </div>
-                    <p>Soy desarrollador de software con una profunda pasión por la tecnología y la programación. En mi tiempo libre me gusta trabajar en proyectos personales y explorar nuevas herramientas de desarrollo.</p>
-                    <p>He trabajado con tecnologías como Java/Spring, TypeScript/Angular, SQL y Git, además tengo conocimientos en otros lenguajes y herramientas como Kotlin, Lua, Linux y más.</p>
-                    <p>Me considero una persona curiosa y creativa, a la que le encanta experimentar con nuevas ideas y probar diferentes enfoques para resolver problemas. Por mi cuenta, estoy aprendiendo a usar Linux y muchas de las herramientas que ofrece para optimizar mi flujo de trabajo como desarrollador.</p>
+                    <div class="hero-main">
+                        <img id="me" class="borderGroove" src="/img/me.png" width="440" height="440" alt="Retrato ilustrado de Alberto Pérez Navarro">
+                        <div class="hero-copy">
+                            <p class="role">QA Automation Engineer / SDET</p>
+                            <p class="lede">Pruebas manuales y automatizadas desde febrero de 2026, en Valdemoro.</p>
+                            <p class="hero-actions">
+                                <a class="bevel" href="/AlbertoPerezCV.pdf">CV</a>
+                                <a class="bevel" href="#contact">Contacto</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
-            <section id="experience">
+
+            <div class="ticker" aria-hidden="true">
+                <div class="ticker-track">
+                    <span>QA Automation Engineer / SDET * desde febrero de 2026 * Playwright * Karate * Cucumber * JavaScript * Jira * Xray * TestRail * Oracle * Java * Angular * Valdemoro * </span>
+                    <span>QA Automation Engineer / SDET * desde febrero de 2026 * Playwright * Karate * Cucumber * JavaScript * Jira * Xray * TestRail * Oracle * Java * Angular * Valdemoro * </span>
+                </div>
+            </div>
+            <div class="sparkline" aria-hidden="true"></div>
+
+            <section id="aboutMe" data-section>
                 <div class="section">
-                    <h1>
-                        <img id="exp" src="/img/exp.gif">
-                        <img id="exp" src="/img/exp.gif">
-                        <img id="exp" src="/img/exp.gif">
+                    <h2>
+                        <img class="star" src="/img/star.gif" width="20" height="19" alt="">
+                        Sobre mí
+                        <img class="star" src="/img/star.gif" width="20" height="19" alt="">
+                        <img class="win-controls" src="/img/win-controls.svg" width="62" height="18" alt="" aria-hidden="true">
+                    </h2>
+                    <div class="about-copy">
+                        <p>Soy QA Automation Engineer / SDET. Trabajo en calidad de software desde febrero de 2026, unos nueve meses: pruebas manuales y automatizadas, planes de prueba y frameworks de automatización.</p>
+                        <p>En el día a día uso Playwright, Karate y Cucumber, con JavaScript. Organizo el trabajo con Jira, Xray y TestRail, y los datos con SQL, PostgreSQL y Oracle. Java y Angular son un plus: vengo del desarrollo, y con ellos entiendo y construyo lo que después pruebo.</p>
+                        <p>Ahora cuido la calidad de Amazon Business International Expansion (ABIX) con ALTEN Spain, en web, web móvil y apps nativas, en un equipo Agile que trabaja en inglés. Antes llevé la automatización en ItegGo para el Grupo DIA. En mi tiempo libre sigo con Linux y con proyectos propios.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="sparkline" aria-hidden="true"></div>
+
+            <section id="experience" data-section>
+                <div class="section">
+                    <h2>
+                        <img class="exp" src="/img/exp.gif" width="100" height="100" alt="">
                         Experiencia
-                        <img id="exp" src="/img/exp.gif">
-                        <img id="exp" src="/img/exp.gif">
-                        <img id="exp" src="/img/exp.gif">
-                    </h1>
-                    <div class="titleDate">
-                        <h2>Dev&Del</h2>
-                        <h3>Full Stack Junior / Marzo 2025 - Julio 2025</h3>
-                    </div>
-                    <p>
-                        • Desarrollé funcionalidades para una aplicación web del sector asegurador en un pequeño equipo, implementando soluciones desde frontend con Angular y Angular Material hasta backend con Java Spring.
-                        <br><br>
-                        • Diseñé e implementé componentes de interfaz responsivos utilizando Angular Material, diagnostiqué y resolví bugs.
-                        <br><br>
-                        • Construí endpoints RESTful en backend Java Spring, implementando lógica de negocio, validaciones y manejo de errores.
-                        <br><br>
-                        • Participé activamente en ceremonias ágiles incluyendo daily standups, sprint planning y code reviews, contribuyendo con propuestas técnicas para mejora continua del proyecto.
-                        <br><br>
-                        • Gestioné control de versiones mediante Git y utilicé Holded para seguimiento y organización de tareas asignadas.
-                    </p>
-                    <p><b>Tecnologías:</b> Angular, Angular Material, TypeScript, Java, Spring Boot, RESTful APIs, Git, Holded</p>
+                        <img class="exp" src="/img/exp.gif" width="100" height="100" alt="">
+                        <img class="win-controls" src="/img/win-controls.svg" width="62" height="18" alt="" aria-hidden="true">
+                    </h2>
+
+                    <article class="job">
+                        <div class="titleDate">
+                            <h3>Ingeniero QA — ALTEN Spain <span class="badge">nuevo</span></h3>
+                            <p class="when">07/2026 – Actualidad · Remoto</p>
+                        </div>
+                        <p>Proyecto Amazon Business (ABIX). Calidad en la expansión internacional de Amazon Business: pruebas manuales y automatizadas, análisis de defectos de marketplace frente a worldwide, y el plan de pruebas en un entorno Agile en inglés.</p>
+                        <ul>
+                            <li>Llevo el QA de marketplaces nuevos y de funcionalidades nuevas en los que ya existen, con reporte a un responsable directo.</li>
+                            <li>Trabajo en inglés, en Agile/Scrum (sprints y dailies), con un equipo internacional. El canal principal es Slack.</li>
+                            <li>Pruebo web, web móvil y apps nativas (Android e iOS), en manual y exploratorio y en automatizado.</li>
+                            <li>Automatizo la cobertura de features con JavaScript, Playwright y Cucumber, con Git y herramientas internas.</li>
+                            <li>Documento tests y defectos, y distingo si un fallo es de un marketplace o worldwide.</li>
+                            <li>Diseño test plans, planifico el sprint, señalo blockers y prioridades, y ayudo a desbloquear la entrega.</li>
+                        </ul>
+                        <p><b>Tecnologías:</b> JavaScript, Playwright, Cucumber, Git, Slack, Agile/Scrum, web, web móvil, Android, iOS</p>
+                    </article>
+
+                    <img class="contentSeparator" src="/img/contentSeparator.gif" width="800" height="20" alt="" loading="lazy">
+
+                    <article class="job">
+                        <div class="titleDate">
+                            <h3>Consultor de automatización y tester QA — ItegGo</h3>
+                            <p class="when">02/2026 – 07/2026</p>
+                        </div>
+                        <p>Cliente: Grupo DIA. Calidad en retail y distribución: frameworks de automatización desde cero, testing de APIs y microservicios, y la voz de QA desde la arquitectura hasta la release.</p>
+                        <ul>
+                            <li>Lideré el plan de testing de proyectos de cliente, ofertas y notificaciones, y de la plataforma CDA (Big Data e IA).</li>
+                            <li>Diseñé y mantuve frameworks de automatización de back (Karate) y de UI (Playwright) desde cero, para APIs y microservicios.</li>
+                            <li>Probé APIs y microservicios con Postman, Swagger y scripts propios, y llevé la visión de QA a las reuniones de arquitectura.</li>
+                            <li>Mentoricé a QAs nuevos en Agile y colaboré en la validación de soluciones de IA y en pruebas de integración entre sistemas.</li>
+                        </ul>
+                        <p><b>Tecnologías:</b> Karate, Playwright, Postman, Swagger, Jira, Confluence, Agile, Gherkin</p>
+                    </article>
+
+                    <img class="contentSeparator" src="/img/contentSeparator.gif" width="800" height="20" alt="" loading="lazy">
+
+                    <article class="job">
+                        <div class="titleDate">
+                            <h3>Desarrollador full-stack junior (prácticas) — DEV&amp;DEL</h3>
+                            <p class="when">03/2025 – 07/2025 · Madrid</p>
+                        </div>
+                        <ul>
+                            <li>Desarrollé funcionalidades full-stack (Angular y Java Spring) para una aplicación web del sector asegurador.</li>
+                            <li>Implementé una interfaz responsiva con Angular Material y endpoints REST con lógica de negocio, validaciones y manejo de errores.</li>
+                            <li>Participé en ceremonias ágiles y gestioné las tareas con Git y Holded.</li>
+                        </ul>
+                        <p><b>Tecnologías:</b> Angular, Angular Material, TypeScript, Java, Spring Boot, REST, Git, Holded</p>
+                    </article>
                 </div>
             </section>
-            <section id="projects">
+
+            <div class="sparkline" aria-hidden="true"></div>
+
+            <section id="skills" data-section>
                 <div class="section">
-                    <h1>Proyectos</h1>
-                    <div class="titleDate">
-                        <h2>Sistema de gestión de pedidos en restaurantes<a id="clickHereLink" href="https://github.com/B3RT1C/apuntame/tree/docker"><img id="clickHere" src="/img/clickHere.gif"></a></h2>
-                        <h3>Agosto 2025 - Noviembre 2025</h3>
-                    </div>
-                    <p>
-                        • Desarrollé funcionalidades para una aplicación web del sector asegurador en un pequeño equipo, implementando soluciones desde frontend con Angular y Angular Material hasta backend con Java Spring.
-                        <br><br>
-                        • Diseñé e implementé componentes de interfaz responsivos utilizando Angular Material, diagnostiqué y resolví bugs.
-                        <br><br>
-                        • Construí endpoints RESTful en backend Java Spring, implementando lógica de negocio, validaciones y manejo de errores.
-                        <br><br>
-                        • Participé activamente en ceremonias ágiles incluyendo daily standups, sprint planning y code reviews, contribuyendo con propuestas técnicas para mejora continua del proyecto.
-                        • Gestioné control de versiones mediante Git y utilicé Holded para seguimiento y organización de tareas asignadas.
-                    </p>
-                    <p><b>Technologías:</b> Java 21, Spring Boot, PostgreSQL, Angular 19, TypeScript, RxJS, Angular Material, WebSockets, JWT, Docker, Maven, Git </p>
-                    
-                </div>
-            </section>
-            <section id="skills">
-                <div class="section">
-                    <h1>Habilidades</h1>
-                    <h2>Lenguajes de programación</h2>
+                    <h2>
+                        <img class="star" src="/img/star.gif" width="20" height="19" alt="" loading="lazy">
+                        Herramientas
+                        <img class="star" src="/img/star.gif" width="20" height="19" alt="" loading="lazy">
+                        <img class="win-controls" src="/img/win-controls.svg" width="62" height="18" alt="" aria-hidden="true">
+                    </h2>
+
+                    <h3>Herramientas de testing</h3>
+                    <!-- Iconos Devicon v2.18.0 (MIT), salvo xray.svg y gherkin.svg, dibujos originales. Oracle es el wordmark de Devicon, con el viewBox recortado. Ver THIRD-PARTY-NOTICES.txt -->
                     <div class="skillList">
                         <figure>
-                            <img src="/img/duke.gif">
+                            <img class="plated" src="/img/icons/playwright.svg" width="128" height="128" alt="" loading="lazy">
+                            <figcaption>Playwright</figcaption>
+                        </figure>
+                        <figure>
+                            <img class="plated" src="/img/icons/karate.svg" width="128" height="128" alt="" loading="lazy">
+                            <figcaption>Karate</figcaption>
+                        </figure>
+                        <figure>
+                            <img class="plated" src="/img/icons/cucumber.svg" width="128" height="128" alt="" loading="lazy">
+                            <figcaption>Cucumber</figcaption>
+                        </figure>
+                        <figure>
+                            <img class="plated" src="/img/icons/gherkin.svg" width="32" height="32" alt="" loading="lazy">
+                            <figcaption>Gherkin</figcaption>
+                        </figure>
+                        <figure>
+                            <img class="plated" src="/img/icons/javascript.svg" width="128" height="128" alt="" loading="lazy">
+                            <figcaption>JavaScript</figcaption>
+                        </figure>
+                        <figure>
+                            <img class="plated" src="/img/icons/postman.svg" width="128" height="128" alt="" loading="lazy">
+                            <figcaption>Postman</figcaption>
+                        </figure>
+                        <figure>
+                            <img class="plated" src="/img/icons/swagger.svg" width="128" height="128" alt="" loading="lazy">
+                            <figcaption>Swagger</figcaption>
+                        </figure>
+                        <figure>
+                            <img class="plated" src="/img/icons/jira.svg" width="128" height="128" alt="" loading="lazy">
+                            <figcaption>Jira</figcaption>
+                        </figure>
+                        <figure>
+                            <img class="plated" src="/img/icons/xray.svg" width="32" height="32" alt="" loading="lazy">
+                            <figcaption>Xray</figcaption>
+                        </figure>
+                        <figure>
+                            <img class="plated" src="/img/icons/testrail.svg" width="128" height="128" alt="" loading="lazy">
+                            <figcaption>TestRail</figcaption>
+                        </figure>
+                        <figure>
+                            <img class="wordmark" src="/img/icons/oracle.svg" width="128" height="20" alt="" loading="lazy">
+                            <figcaption>Oracle</figcaption>
+                        </figure>
+                    </div>
+
+                    <img class="contentSeparator" src="/img/contentSeparator.gif" width="800" height="20" alt="" loading="lazy">
+                    <h3>Lenguajes de programación</h3>
+                    <div class="skillList">
+                        <figure>
+                            <img src="/img/duke.gif" width="55" height="68" alt="" loading="lazy">
                             <figcaption>Java</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/typescriptLogo.png">
+                            <img src="/img/typescriptLogo.png" width="160" height="160" alt="" loading="lazy">
                             <figcaption>TypeScript</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/mysqlLogo.png">
+                            <img class="plated" src="/img/mysqlLogo.png" width="160" height="160" alt="" loading="lazy">
                             <figcaption>SQL</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/luaLogo.png">
+                            <img src="/img/luaLogo.png" width="160" height="160" alt="" loading="lazy">
                             <figcaption>Lua</figcaption>
                         </figure>
                     </div>
-                    <img class="contentSeparator" src="/img/contentSeparator.gif">
-                    <h2>Tecnologías Backend</h2>
+
+                    <img class="contentSeparator" src="/img/contentSeparator.gif" width="800" height="20" alt="" loading="lazy">
+                    <h3>Tecnologías backend</h3>
                     <div class="skillList">
                         <figure>
-                            <img src="/img/springLogo.png">
+                            <img src="/img/springLogo.png" width="160" height="160" alt="" loading="lazy">
                             <figcaption>Spring Boot</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/postgresqlLogo.png">
+                            <img src="/img/postgresqlLogo.png" width="155" height="160" alt="" loading="lazy">
                             <figcaption>PostgreSQL</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/mongodbLogo.svg">
+                            <img src="/img/mongodbLogo.svg" width="128" height="128" alt="" loading="lazy">
                             <figcaption>MongoDB</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/mavenLogo.png">
+                            <img src="/img/mavenLogo.png" width="144" height="160" alt="" loading="lazy">
                             <figcaption>Maven</figcaption>
                         </figure>
                     </div>
-                    <img class="contentSeparator" src="/img/contentSeparator.gif">
-                    <h2>Tecnologías Frontend</h2>
+
+                    <img class="contentSeparator" src="/img/contentSeparator.gif" width="800" height="20" alt="" loading="lazy">
+                    <h3>Tecnologías frontend</h3>
                     <div class="skillList">
                         <figure>
-                            <img src="/img/angularLogo.png">
+                            <img src="/img/angularLogo.png" width="160" height="160" alt="" loading="lazy">
                             <figcaption>Angular</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/htmlLogo.svg">
+                            <img src="/img/htmlLogo.svg" width="128" height="128" alt="" loading="lazy">
                             <figcaption>HTML</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/cssLogo.svg">
+                            <img src="/img/cssLogo.svg" width="128" height="128" alt="" loading="lazy">
                             <figcaption>CSS</figcaption>
                         </figure>
                     </div>
-                    <img class="contentSeparator" src="/img/contentSeparator.gif">
-                    <h2>Herramientas de desarrollo</h2>
+
+                    <img class="contentSeparator" src="/img/contentSeparator.gif" width="800" height="20" alt="" loading="lazy">
+                    <h3>Herramientas de desarrollo</h3>
                     <div class="skillList">
                         <figure>
-                            <img src="/img/gitLogo.svg">
+                            <img src="/img/gitLogo.svg" width="128" height="128" alt="" loading="lazy">
                             <figcaption>Git</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/githubLogo.svg">
+                            <img src="/img/githubLogo.svg" width="128" height="128" alt="" loading="lazy">
                             <figcaption>GitHub</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/vsCodeLogo.svg">
-                            <figcaption>VSCode</figcaption>
+                            <img class="plated" src="/img/icons/jenkins.svg" width="128" height="128" alt="" loading="lazy">
+                            <figcaption>Jenkins</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/intellijLogo.svg">
+                            <img src="/img/vsCodeLogo.svg" width="128" height="128" alt="" loading="lazy">
+                            <figcaption>VS Code</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="/img/intellijLogo.svg" width="128" height="128" alt="" loading="lazy">
                             <figcaption>IntelliJ</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/eclipseLogo.svg">
+                            <img src="/img/eclipseLogo.svg" width="128" height="128" alt="" loading="lazy">
                             <figcaption>Eclipse</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/peguinDance.gif">
+                            <img src="/img/peguinDance.gif" width="198" height="200" alt="" loading="lazy">
                             <figcaption>Linux</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/vimLogo.png">
-                            <figcaption>VIM motions</figcaption>
+                            <img src="/img/vimLogo.png" width="160" height="160" alt="" loading="lazy">
+                            <figcaption>Vim</figcaption>
                         </figure>
                         <figure>
-                            <img src="/img/dockerLogo.png">
+                            <img src="/img/dockerLogo.png" width="160" height="160" alt="" loading="lazy">
                             <figcaption>Docker</figcaption>
                         </figure>
                     </div>
                 </div>
             </section>
-            <section id="education">
+
+            <div class="sparkline" aria-hidden="true"></div>
+
+            <section id="projects" data-section>
                 <div class="section">
-                    <h1>Educación</h1>
-                    <div class="titleDate">
-                        <h2>Desarrollo de aplicaciones multiplataforma</h2>
-                        <h3>2023 - 2025</h3>
-                    </div>
-                    <p>IES Gabriel García Marquez Leganés</p>
+                    <h2>
+                        <img class="star" src="/img/star.gif" width="20" height="19" alt="" loading="lazy">
+                        Proyectos
+                        <img class="star" src="/img/star.gif" width="20" height="19" alt="" loading="lazy">
+                        <img class="win-controls" src="/img/win-controls.svg" width="62" height="18" alt="" aria-hidden="true">
+                    </h2>
+
+                    <article class="job">
+                        <div class="titleDate">
+                            <h3>
+                                Sistema de gestión de pedidos en restaurantes
+                                <a class="click-link" href="https://github.com/B3RT1C/apuntame/tree/docker">
+                                    <img id="clickHere" src="/img/clickHere.gif" width="80" height="60" alt="Ver el código de Apúntame en GitHub" loading="lazy">
+                                </a>
+                            </h3>
+                            <p class="when">Agosto 2025 – Noviembre 2025</p>
+                        </div>
+                        <!-- Texto a partir de la memoria del TFC en la rama docker de B3RT1C/apuntame y de la descripción del pom.xml. -->
+                        <p>Desarrollé Apúntame, un sistema de gestión de pedidos para un restaurante, como trabajo de fin de ciclo. El objetivo era que tomar, procesar y ver los pedidos fuera más eficiente e intuitivo.</p>
+                        <ul>
+                            <li>El camarero registra el pedido y el servidor lo envía a las estaciones (cocina, barra, postres). Cuando una estación termina su parte, avisa al resto.</li>
+                            <li>Funciona en local, sin depender de internet: base de datos, lógica e interfaz. Incluye usuarios, historial de pedidos, búsqueda de productos, ingredientes y alérgenos, y una interfaz que se adapta a la pantalla.</li>
+                        </ul>
+                        <p><b>Tecnologías:</b> Java 21, Spring Boot, PostgreSQL, Angular 19, TypeScript, RxJS, Angular Material, WebSockets, JWT, Docker, Maven, Git</p>
+                    </article>
+
+                    <img class="contentSeparator" src="/img/contentSeparator.gif" width="800" height="20" alt="" loading="lazy">
+
+                    <article class="job" id="qa-projects">
+                        <h3>Proyectos de QA en GitHub</h3>
+                        <p class="soon">próximamente</p>
+                        <p class="construction"><span class="stripes" aria-hidden="true"></span> en obras</p>
+                        <p>Aquí enlazaré repositorios públicos de QA o testing cuando los haya en GitHub. De momento este hueco está vacío.</p>
+                    </article>
                 </div>
             </section>
-            <section id="contact">
+
+            <div class="sparkline" aria-hidden="true"></div>
+
+            <section id="education" data-section>
                 <div class="section">
-                    <img id="links" src="/img/links.gif">
-                    <h1>Contacto</h1>
+                    <h2>
+                        <img class="star" src="/img/star.gif" width="20" height="19" alt="" loading="lazy">
+                        Formación
+                        <img class="star" src="/img/star.gif" width="20" height="19" alt="" loading="lazy">
+                        <img class="win-controls" src="/img/win-controls.svg" width="62" height="18" alt="" aria-hidden="true">
+                    </h2>
+                    <article class="job">
+                        <div class="titleDate">
+                            <h3>CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+                            <p class="when">2023 – 2025</p>
+                        </div>
+                        <p>IES Gabriel García Márquez, Leganés</p>
+                    </article>
+                    <h3>Idiomas</h3>
                     <ul>
+                        <li>Español: nativo.</li>
+                        <li>Inglés: B2 (Cambridge B1 Preliminary, aprobado con nivel B2). Es el idioma de trabajo en Amazon.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="sparkline" aria-hidden="true"></div>
+
+            <section id="contratame" data-section>
+                <div class="section">
+                    <h2>
+                        <img class="star" src="/img/star.gif" width="20" height="19" alt="" loading="lazy">
+                        ¡Contrátame! Webs para negocios de Valdemoro
+                        <img class="star" src="/img/star.gif" width="20" height="19" alt="" loading="lazy">
+                        <img class="win-controls" src="/img/win-controls.svg" width="62" height="18" alt="" aria-hidden="true">
+                    </h2>
+                    <p>Hago páginas web para negocios de Valdemoro: una página clara, hecha a mano, que se abre bien en el móvil y que puedes enseñar a quien entre. Si tienes un comercio en el pueblo y quieres estar en internet, cuéntame qué necesitas.</p>
+                    <p><a class="bevel" href="#contact">Escríbeme</a></p>
+                </div>
+            </section>
+
+            <div class="sparkline" aria-hidden="true"></div>
+
+            <section id="contact" data-section>
+                <div class="section">
+                    <h2>
+                        <img id="links" src="/img/links.gif" width="200" height="100" alt="" loading="lazy">
+                        Contacto
+                        <img class="win-controls" src="/img/win-controls.svg" width="62" height="18" alt="" aria-hidden="true">
+                    </h2>
+                    <ul class="contact-list">
                         <li><a class="link" href="https://www.linkedin.com/in/albertopn">LinkedIn</a></li>
                         <li><a class="link" href="https://github.com/B3RT1C">GitHub</a></li>
-                        <li><img id="emailMe" src="/img/emailMe.gif">: albertopn31@gmail.com</li>
+                        <li>
+                            <img class="email-gif" src="/img/emailMe.gif" width="100" height="32" alt="" loading="lazy">
+                            <a class="link" href="mailto:albertopn31@gmail.com">albertopn31@gmail.com</a>
+                        </li>
                     </ul>
                 </div>
             </section>
         </main>
 
         <footer>
-            <img id="staffWizard" src="/img/staffwizard.gif">
+            <div class="footer-panel">
+                <h2>
+                    <img class="star" src="/img/star.gif" width="20" height="19" alt="" loading="lazy">
+                    Libro de visitas
+                    <img class="star" src="/img/star.gif" width="20" height="19" alt="" loading="lazy">
+                    <img class="win-controls" src="/img/win-controls.svg" width="62" height="18" alt="" aria-hidden="true">
+                </h2>
+                <p>El libro de visitas no guarda firmas en ningún servidor. Si quieres dejar la tuya, te lleva al contacto.</p>
+                <p><a class="bevel" href="#contact">Firmar el libro</a></p>
+
+                <div class="webring">
+                    <p class="webring-title">Anillo de esta web</p>
+                    <p class="webring-nav">
+                        <a class="link" href="#projects">← anterior</a>
+                        <span>b3rt1c.net</span>
+                        <a class="link" href="#contact">siguiente →</a>
+                    </p>
+                    <p class="counter-note">Anillo decorativo: solo enlaza a secciones de esta misma página.</p>
+                </div>
+
+                <div class="counter" id="hitCounter">
+                    <p class="counter-label">Has entrado</p>
+                    <p class="hit-digits" id="hitDigits" aria-hidden="true">000000</p>
+                    <p class="counter-note">Contador decorativo guardado solo en este navegador, sin servicios externos.</p>
+                </div>
+
+                <div class="btn-wall">
+                    <span class="btn88 btn88-any"><span>Se ve bien</span><span>en el tuyo</span></span>
+                    <span class="btn88 btn88-work"><span>En obras</span><span>con cariño</span></span>
+                    <a class="btn88 btn88-gh" href="https://github.com/B3RT1C"><span>GitHub</span><span>B3RT1C</span></a>
+                    <a class="btn88 btn88-in" href="https://www.linkedin.com/in/albertopn"><span>LinkedIn</span><span>albertopn</span></a>
+                    <a class="btn88 btn88-mail" href="mailto:albertopn31@gmail.com"><span>E-mail</span><span>escríbeme</span></a>
+                    <a class="btn88 btn88-cv" href="/AlbertoPerezCV.pdf"><span>Mi CV</span><span>PDF</span></a>
+                    <a class="btn88 btn88-town" href="#contratame"><span>Valdemoro</span><span>webs</span></a>
+                    <span class="btn88 btn88-html"><span>Hecho con</span><span>HTML</span></span>
+                    <span class="btn88 btn88-note"><span>Sin</span><span>rastreo</span></span>
+                    <a class="btn88 btn88-top" href="#top"><span>Volver</span><span>arriba</span></a>
+                </div>
+
+                <img id="staffWizard" src="/img/staffwizard.gif" width="93" height="89" alt="" loading="lazy">
+                <p class="colophon"><a class="link" href="#top">↑ arriba</a></p>
+            </div>
         </footer>
+        <noscript>
+            <style>
+                #navLinks { display: flex !important; flex-wrap: wrap; }
+                #sidebarButton { display: none !important; }
+                .task-tray { display: none !important; }
+            </style>
+        </noscript>
         <script src="/app.js"></script>
     </body>
 </html>
