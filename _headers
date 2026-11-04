@@ -1,0 +1,9 @@
+# Solo HTML, CSS y JS. Fuentes e imágenes conservan la caché por defecto.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.js
+  Cache-Control: public, max-age=0, must-revalidate
