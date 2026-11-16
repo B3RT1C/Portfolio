@@ -2,225 +2,174 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="/main.css">
-        <title>Portfolio</title>
-        <link rel="icon" href="/img/beartic.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="CV web de Alberto Pérez Navarro, SDET y consultor de automatización QA en itegGO Consulting.">
+        <link rel="stylesheet" href="main.css">
+        <link rel="icon" href="img/beartic.png" type="image/png">
+        <title>Alberto Pérez Navarro | CV Web</title>
     </head>
     <body id="top">
-        <header>
-            <nav>
-                <a href="#aboutMe"><img id="nombre" src="/img/name.png"></a>
-                <img id="hylicsRunning" src="/img/hylics_running.gif">
-                <ul id="navLinks">
-                    <li><a class="link" href="#experience">Experiencia</a></li>
-                    <li><a class="link" href="#projects">Proyectos</a></li>
-                    <li><a class="link" href="#skills">Habilidades</a></li>
-                    <li><a class="link" href="#education">Educación</a></li>
-                    <li><a class="link" href="#contact">Contacto</a></li>
-                    <li><a class="link" href="/AlbertoPerezCV.pdf">CV</a></li>
-                </ul>
-                <img onclick="toggleSidebar()" id="sidebarButton" src="/img/hamburger.png">
-                <div id="sidebar" class="borderGroove">
-                    <ul>
-                        <li><a class="link" href="#experience">Experiencia</a></li>
-                        <li><a class="link" href="#projects">Proyectos</a></li>
-                        <li><a class="link" href="#skills">Habilidades</a></li>
-                        <li><a class="link" href="#contact">Contacto</a></li>
-                        <li><a class="link" href="#education">Educación</a></li>
-                        <li><a class="link" href="/AlbertoPerezCV.pdf">CV</a></li>
-                    </ul>
+        <header class="siteHeader">
+            <nav class="nav">
+                <a class="brand" href="#profile" aria-label="Alberto Pérez Navarro">
+                    <span class="brandName">Alberto Pérez Navarro</span>
+                    <span class="brandCursor" aria-hidden="true">_</span>
+                </a>
+
+                <button id="menuButton" class="menuButton" type="button" aria-expanded="false" aria-controls="navLinks" data-i18n="menuButton">
+                    Menu
+                </button>
+
+                <div id="navLinks" class="navLinks">
+                    <a class="link" href="#experience" data-i18n="navExperience">Experiencia</a>
+                    <a class="link" href="#skills" data-i18n="navSkills">Habilidades</a>
+                    <a class="link" href="#education" data-i18n="navEducation">Educación</a>
+                    <a class="link" href="#contact" data-i18n="navContact">Contacto</a>
+                    <a class="link" href="CV_AlbertoPerez-ES.pdf" target="_blank" rel="noopener" data-i18n="navCvEs">CV ES</a>
+                    <a class="link" href="CV_AlbertoPerez-EN.pdf" target="_blank" rel="noopener" data-i18n="navCvEn">CV EN</a>
+                    <button id="languageToggle" class="languageToggle" type="button" aria-label="Change language">EN</button>
                 </div>
             </nav>
         </header>
 
         <main>
-            <section id="aboutMe">
-                <div class="section">
-                    <div id="aboutMeHeader">
-                        <h1>
-                            <img src="/img/star.gif">
-                            Sobre mí
-                            <img src="/img/star.gif">
-                        </h1>
-                        <img id="me" class="borderGroove" src="/img/me.png">
-                    </div>
-                    <p>Soy desarrollador de software con una profunda pasión por la tecnología y la programación. En mi tiempo libre me gusta trabajar en proyectos personales y explorar nuevas herramientas de desarrollo.</p>
-                    <p>He trabajado con tecnologías como Java/Spring, TypeScript/Angular, SQL y Git, además tengo conocimientos en otros lenguajes y herramientas como Kotlin, Lua, Linux y más.</p>
-                    <p>Me considero una persona curiosa y creativa, a la que le encanta experimentar con nuevas ideas y probar diferentes enfoques para resolver problemas. Por mi cuenta, estoy aprendiendo a usar Linux y muchas de las herramientas que ofrece para optimizar mi flujo de trabajo como desarrollador.</p>
+            <section id="profile" class="hero section">
+                <div class="terminalBar" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="eyebrow" data-i18n="heroEyebrow">CV Web / QA Automation / Software</p>
+                <h1 data-i18n="heroTitle">SDET · Consultor de Automatización y Tester QA</h1>
+                <p class="heroText" data-i18n="heroText">
+                    Combino base técnica en desarrollo de software con consultoría QA, automatización de pruebas, APIs, microservicios y CI/CD.
+                </p>
+                <div class="heroActions">
+                    <a class="buttonLink" href="#experience" data-i18n="heroPrimaryAction">Ver experiencia</a>
+                    <a class="buttonLink secondary" href="CV_AlbertoPerez-ES.pdf" target="_blank" rel="noopener" data-i18n="heroCvEs">Descargar CV ES</a>
+                    <a class="buttonLink secondary" href="CV_AlbertoPerez-EN.pdf" target="_blank" rel="noopener" data-i18n="heroCvEn">Download CV EN</a>
                 </div>
             </section>
-            <section id="experience">
-                <div class="section">
-                    <h1>
-                        <img id="exp" src="/img/exp.gif">
-                        <img id="exp" src="/img/exp.gif">
-                        <img id="exp" src="/img/exp.gif">
-                        Experiencia
-                        <img id="exp" src="/img/exp.gif">
-                        <img id="exp" src="/img/exp.gif">
-                        <img id="exp" src="/img/exp.gif">
-                    </h1>
+
+            <section id="about" class="section">
+                <div class="sectionHeader">
+                    <span class="sectionKicker">01</span>
+                    <span class="sectionIcon" aria-hidden="true">*</span>
+                    <h2 data-i18n="profileTitle">Perfil</h2>
+                </div>
+                <p data-i18n="profileParagraph">
+                    SDET y Consultor de Automatización y Tester QA con base técnica en desarrollo de software. En itegGO Consulting diseño frameworks de automatización, conecto QA, desarrollo y arquitectura, e integro pruebas en pipelines CI/CD priorizando criticidad de negocio.
+                </p>
+            </section>
+
+            <section id="experience" class="section">
+                <div class="sectionHeader">
+                    <span class="sectionKicker">02</span>
+                    <span class="sectionIcon" aria-hidden="true">EXP</span>
+                    <h2 data-i18n="experienceTitle">Experiencia</h2>
+                </div>
+
+                <article class="entry">
                     <div class="titleDate">
-                        <h2>Dev&Del</h2>
-                        <h3>Full Stack Junior / Marzo 2025 - Julio 2025</h3>
+                        <div>
+                            <h3 data-i18n="iteggoRole">Consultor de Automatización y Tester QA</h3>
+                            <p class="company">itegGO Consulting</p>
+                        </div>
+                        <p class="date" data-i18n="iteggoDate">Enero 2026 - Actual</p>
                     </div>
-                    <p>
-                        • Desarrollé funcionalidades para una aplicación web del sector asegurador en un pequeño equipo, implementando soluciones desde frontend con Angular y Angular Material hasta backend con Java Spring.
-                        <br><br>
-                        • Diseñé e implementé componentes de interfaz responsivos utilizando Angular Material, diagnostiqué y resolví bugs.
-                        <br><br>
-                        • Construí endpoints RESTful en backend Java Spring, implementando lógica de negocio, validaciones y manejo de errores.
-                        <br><br>
-                        • Participé activamente en ceremonias ágiles incluyendo daily standups, sprint planning y code reviews, contribuyendo con propuestas técnicas para mejora continua del proyecto.
-                        <br><br>
-                        • Gestioné control de versiones mediante Git y utilicé Holded para seguimiento y organización de tareas asignadas.
+                    <p data-i18n="iteggoSummary">
+                        Consultor de automatización y tester QA en itegGO Consulting, firma especializada en testing, ciberseguridad y gobierno IT. Aplico base técnica de desarrollo para diseñar e implementar estrategias de calidad y automatización en proyectos de clientes.
                     </p>
-                    <p><b>Tecnologías:</b> Angular, Angular Material, TypeScript, Java, Spring Boot, RESTful APIs, Git, Holded</p>
-                </div>
-            </section>
-            <section id="projects">
-                <div class="section">
-                    <h1>Proyectos</h1>
-                    <div class="titleDate">
-                        <h2>Sistema de gestión de pedidos en restaurantes<a id="clickHereLink" href="https://github.com/B3RT1C/apuntame/tree/docker"><img id="clickHere" src="/img/clickHere.gif"></a></h2>
-                        <h3>Agosto 2025 - Noviembre 2025</h3>
-                    </div>
-                    <p>
-                        • Desarrollé funcionalidades para una aplicación web del sector asegurador en un pequeño equipo, implementando soluciones desde frontend con Angular y Angular Material hasta backend con Java Spring.
-                        <br><br>
-                        • Diseñé e implementé componentes de interfaz responsivos utilizando Angular Material, diagnostiqué y resolví bugs.
-                        <br><br>
-                        • Construí endpoints RESTful en backend Java Spring, implementando lógica de negocio, validaciones y manejo de errores.
-                        <br><br>
-                        • Participé activamente en ceremonias ágiles incluyendo daily standups, sprint planning y code reviews, contribuyendo con propuestas técnicas para mejora continua del proyecto.
-                        • Gestioné control de versiones mediante Git y utilicé Holded para seguimiento y organización de tareas asignadas.
-                    </p>
-                    <p><b>Technologías:</b> Java 21, Spring Boot, PostgreSQL, Angular 19, TypeScript, RxJS, Angular Material, WebSockets, JWT, Docker, Maven, Git </p>
-                    
-                </div>
-            </section>
-            <section id="skills">
-                <div class="section">
-                    <h1>Habilidades</h1>
-                    <h2>Lenguajes de programación</h2>
-                    <div class="skillList">
-                        <figure>
-                            <img src="/img/duke.gif">
-                            <figcaption>Java</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/typescriptLogo.png">
-                            <figcaption>TypeScript</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/mysqlLogo.png">
-                            <figcaption>SQL</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/luaLogo.png">
-                            <figcaption>Lua</figcaption>
-                        </figure>
-                    </div>
-                    <img class="contentSeparator" src="/img/contentSeparator.gif">
-                    <h2>Tecnologías Backend</h2>
-                    <div class="skillList">
-                        <figure>
-                            <img src="/img/springLogo.png">
-                            <figcaption>Spring Boot</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/postgresqlLogo.png">
-                            <figcaption>PostgreSQL</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/mongodbLogo.svg">
-                            <figcaption>MongoDB</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/mavenLogo.png">
-                            <figcaption>Maven</figcaption>
-                        </figure>
-                    </div>
-                    <img class="contentSeparator" src="/img/contentSeparator.gif">
-                    <h2>Tecnologías Frontend</h2>
-                    <div class="skillList">
-                        <figure>
-                            <img src="/img/angularLogo.png">
-                            <figcaption>Angular</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/htmlLogo.svg">
-                            <figcaption>HTML</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/cssLogo.svg">
-                            <figcaption>CSS</figcaption>
-                        </figure>
-                    </div>
-                    <img class="contentSeparator" src="/img/contentSeparator.gif">
-                    <h2>Herramientas de desarrollo</h2>
-                    <div class="skillList">
-                        <figure>
-                            <img src="/img/gitLogo.svg">
-                            <figcaption>Git</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/githubLogo.svg">
-                            <figcaption>GitHub</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/vsCodeLogo.svg">
-                            <figcaption>VSCode</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/intellijLogo.svg">
-                            <figcaption>IntelliJ</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/eclipseLogo.svg">
-                            <figcaption>Eclipse</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/peguinDance.gif">
-                            <figcaption>Linux</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/vimLogo.png">
-                            <figcaption>VIM motions</figcaption>
-                        </figure>
-                        <figure>
-                            <img src="/img/dockerLogo.png">
-                            <figcaption>Docker</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </section>
-            <section id="education">
-                <div class="section">
-                    <h1>Educación</h1>
-                    <div class="titleDate">
-                        <h2>Desarrollo de aplicaciones multiplataforma</h2>
-                        <h3>2023 - 2025</h3>
-                    </div>
-                    <p>IES Gabriel García Marquez Leganés</p>
-                </div>
-            </section>
-            <section id="contact">
-                <div class="section">
-                    <img id="links" src="/img/links.gif">
-                    <h1>Contacto</h1>
-                    <ul>
-                        <li><a class="link" href="https://www.linkedin.com/in/albertopn">LinkedIn</a></li>
-                        <li><a class="link" href="https://github.com/B3RT1C">GitHub</a></li>
-                        <li><img id="emailMe" src="/img/emailMe.gif">: albertopn31@gmail.com</li>
+                    <ul class="bulletList">
+                        <li data-i18n="iteggoBullet1">Diseñar y mantener frameworks de automatización backend con Karate y UI con Playwright.</li>
+                        <li data-i18n="iteggoBullet2">Ejecutar pruebas de APIs y microservicios con Postman, Swagger y scripts personalizados.</li>
+                        <li data-i18n="iteggoBullet3">Integrar pipelines CI/CD para ejecución continua de tests automatizados.</li>
+                        <li data-i18n="iteggoBullet4">Aportar visión QA en reuniones de arquitectura y definir estrategias de testing por criticidad de negocio.</li>
+                        <li data-i18n="iteggoBullet5">Trabajar con metodologías Agile, Jira y Confluence en entornos de consultoría.</li>
                     </ul>
+                </article>
+
+                <article class="entry">
+                    <div class="titleDate">
+                        <div>
+                            <h3 data-i18n="devdelRole">Desarrollador Full-Stack Junior</h3>
+                            <p class="company">Dev&Del</p>
+                        </div>
+                        <p class="date" data-i18n="devdelDate">Marzo 2025 - Julio 2025</p>
+                    </div>
+                    <ul class="bulletList">
+                        <li data-i18n="devdelBullet1">Desarrollé funcionalidades full-stack con Angular, Angular Material y Java Spring para una aplicación web del sector asegurador.</li>
+                        <li data-i18n="devdelBullet2">Implementé interfaces responsivas, endpoints RESTful, lógica de negocio, validaciones y manejo de errores.</li>
+                        <li data-i18n="devdelBullet3">Participé en ceremonias ágiles, code reviews y gestión de tareas con Git y Holded.</li>
+                    </ul>
+                    <p class="stack" data-i18n="devdelStack">Stack: Angular, Angular Material, TypeScript, Java, Spring Boot, RESTful APIs, Git, Holded.</p>
+                </article>
+            </section>
+
+            <section id="skills" class="section">
+                <div class="sectionHeader">
+                    <span class="sectionKicker">03</span>
+                    <span class="sectionIcon" aria-hidden="true">***</span>
+                    <h2 data-i18n="skillsTitle">Habilidades técnicas</h2>
                 </div>
+
+                <div class="skillGrid">
+                    <article class="skillCard">
+                        <h3 data-i18n="backendTitle">Backend</h3>
+                        <p><strong>QA:</strong> Karate, Postman, Swagger</p>
+                        <p><strong>DEV:</strong> Java, Spring, SQL</p>
+                    </article>
+                    <article class="skillCard">
+                        <h3 data-i18n="frontendTitle">Frontend</h3>
+                        <p><strong>QA:</strong> Playwright</p>
+                        <p><strong>DEV:</strong> TypeScript, Angular, HTML, CSS</p>
+                    </article>
+                    <article class="skillCard">
+                        <h3 data-i18n="toolsTitle">Herramientas</h3>
+                        <p><strong>QA:</strong> Gherkin, Jira, Confluence, CI/CD, Lua</p>
+                        <p><strong>DEV:</strong> Git, GitHub, Linux, Neovim</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="education" class="section">
+                <div class="sectionHeader">
+                    <span class="sectionKicker">04</span>
+                    <span class="sectionIcon" aria-hidden="true">EDU</span>
+                    <h2 data-i18n="educationTitle">Educación e idiomas</h2>
+                </div>
+                <div class="splitGrid">
+                    <article class="entry compact">
+                        <h3 data-i18n="educationDegree">Desarrollo de Aplicaciones Multiplataforma</h3>
+                        <p>IES Gabriel García Lorca Leganés</p>
+                        <p class="date" data-i18n="educationDate">2023 - 2025 · España</p>
+                    </article>
+                    <article class="entry compact">
+                        <h3 data-i18n="languageTitle">Idiomas</h3>
+                        <p data-i18n="languageSpanish">Español: nativo</p>
+                        <p data-i18n="languageEnglish">Inglés: B2 (Cambridge Certificate)</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <div class="sectionHeader">
+                    <span class="sectionKicker">05</span>
+                    <span class="sectionIcon" aria-hidden="true">@</span>
+                    <h2 data-i18n="contactTitle">Contacto</h2>
+                </div>
+                <ul class="contactList">
+                    <li><a class="link" href="mailto:albertopn31@gmail.com">albertopn31@gmail.com</a></li>
+                    <li><a class="link" href="https://www.linkedin.com/in/albertopn" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a class="link" href="https://github.com/B3RT1C" target="_blank" rel="noopener">GitHub</a></li>
+                    <li data-i18n="contactLocation">Valdemoro, España</li>
+                </ul>
             </section>
         </main>
 
         <footer>
-            <img id="staffWizard" src="/img/staffwizard.gif">
+            <p data-i18n="footerText">Hecho con HTML, CSS, JavaScript y un poco de nostalgia por Internet.</p>
         </footer>
-        <script src="/app.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>
