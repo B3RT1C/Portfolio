@@ -74,7 +74,7 @@ img {
 a,
 button,
 .bevel,
-.btn88,
+a.btn88,
 .task-link,
 .task-brand {
     cursor: url("/img/cursor.png") 1 1, pointer;
@@ -273,7 +273,7 @@ button,
 .ticker {
     position: relative;
     height: 2.1rem;
-    margin: 12px 8px 4px;
+    margin: 10px 8px 14px;
     overflow: hidden;
     color: var(--yellow);
     background: #000;
@@ -763,7 +763,6 @@ footer {
 }
 
 .footer-panel > p,
-.footer-panel > .webring,
 .footer-panel > .counter,
 .footer-panel > .btn-wall,
 .footer-panel > .colophon {
@@ -772,12 +771,16 @@ footer {
 }
 
 .webring {
-    width: min(440px, calc(100% - 28px));
-    margin: 16px auto;
-    padding: 0 0 8px;
+    width: min(460px, calc(100% - 28px));
+    margin: 18px auto;
+    padding: 0 0 12px;
     background: #05050c;
     border: 2px solid var(--cyan);
     box-shadow: 3px 3px 0 var(--magenta);
+}
+
+.webring .counter-note {
+    padding: 0 12px;
 }
 
 .webring-title {
@@ -863,12 +866,13 @@ footer {
 
 .btn88 {
     display: inline-flex;
-    flex: 0 0 88px;
+    flex: 0 0 auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 88px;
+    min-width: 88px;
     height: 31px;
+    padding: 0 6px;
     overflow: hidden;
     border-style: solid;
     border-width: 2px;
@@ -877,6 +881,18 @@ footer {
     line-height: 1;
     text-align: center;
     text-decoration: none;
+    white-space: nowrap;
+}
+
+a.btn88 {
+    box-shadow: 2px 2px 0 #000;
+}
+
+span.btn88 {
+    border-width: 1px;
+    border-style: dashed;
+    opacity: 0.88;
+    user-select: none;
 }
 
 .btn88-gh { color: #041018; background: #7af4ff; border-color: #fff #066 #066 #fff; }
@@ -884,14 +900,18 @@ footer {
 .btn88-mail { color: #120018; background: #ffe14a; border-color: #fff6a8 #806000 #806000 #fff6a8; }
 .btn88-cv { color: #fff; background: #146b28; border-color: #b6f5c0 #064 #064 #b6f5c0; }
 .btn88-town { color: #042; background: #bffff4; border-color: #fff #067 #067 #fff; }
-.btn88-html { color: #120018; background: #ff9a3c; border-color: #ffe0bf #803000 #803000 #ffe0bf; }
-.btn88-note { color: #ffe0f4; background: #2a0008; border-color: #ff7af2 #600 #600 #ff7af2; }
 .btn88-top { color: #120018; background: #f3f3f3; border-color: #fff #555 #555 #fff; }
-.btn88-any { color: #120018; background: #7af4ff; border-color: #fff #066 #066 #fff; }
-.btn88-work { color: #120018; background: #ffe14a; border-color: #fff6a8 #806000 #806000 #fff6a8; }
 
-.btn88:hover,
-.btn88:focus-visible {
+.btn88-arch { color: #7cd4ff; background: #081826; border-color: #1793d1; }
+.btn88-vim { color: #7dff9b; background: #091f10; border-color: #2ecc71; }
+.btn88-works { color: #ffe14a; background: #1e1600; border-color: #d4a800; }
+.btn88-git { color: #ff8585; background: #26080b; border-color: #e04f5f; }
+.btn88-qa { color: #ffb3ff; background: #1e0826; border-color: #d95cff; }
+.btn88-html { color: #ffba75; background: #241203; border-color: #ff9a3c; }
+.btn88-note { color: #ffe0f4; background: #2a0008; border-color: #ff7af2; }
+
+a.btn88:hover,
+a.btn88:focus-visible {
     color: #111;
     background: var(--magenta);
     border-color: #ffe6ff #600 #600 #ffe6ff;
@@ -899,8 +919,9 @@ footer {
     outline-offset: 2px;
 }
 
-.btn88:active {
+a.btn88:active {
     border-style: inset;
+    transform: translateY(1px);
 }
 
 #staffWizard {

@@ -12,7 +12,7 @@
         <meta property="og:type" content="website">
         <meta property="og:locale" content="es_ES">
         <link rel="icon" href="/img/beartic.png" type="image/png">
-        <link rel="stylesheet" href="/main.css?v=20261103">
+        <link rel="stylesheet" href="/main.css?v=20261118">
     </head>
     <body>
         <a class="skip" href="#top">Saltar al contenido</a>
@@ -25,7 +25,7 @@
                     <li><a class="task-link" href="#skills" data-nav="skills">Herramientas</a></li>
                     <li><a class="task-link" href="#projects" data-nav="projects">Proyectos</a></li>
                     <li><a class="task-link" href="#education" data-nav="education">Formación</a></li>
-                    <li><a class="task-link" href="#contratame" data-nav="contratame">Contrátame</a></li>
+                    <!-- Oculto de momento: <li><a class="task-link" href="#contratame" data-nav="contratame">Contrátame</a></li> -->
                     <li><a class="task-link" href="#contact" data-nav="contact">Contacto</a></li>
                     <li><a class="task-link" href="/AlbertoPerezCV.pdf">CV</a></li>
                 </ul>
@@ -38,7 +38,7 @@
                         <li><a class="task-link" href="#skills" data-nav="skills">Herramientas</a></li>
                         <li><a class="task-link" href="#projects" data-nav="projects">Proyectos</a></li>
                         <li><a class="task-link" href="#education" data-nav="education">Formación</a></li>
-                        <li><a class="task-link" href="#contratame" data-nav="contratame">Contrátame</a></li>
+                        <!-- Oculto de momento: <li><a class="task-link" href="#contratame" data-nav="contratame">Contrátame</a></li> -->
                         <li><a class="task-link" href="#contact" data-nav="contact">Contacto</a></li>
                         <li><a class="task-link" href="/AlbertoPerezCV.pdf">CV</a></li>
                     </ul>
@@ -49,6 +49,13 @@
         <p class="visually-hidden">QA Automation Engineer / SDET desde febrero de 2026. Playwright, Karate, Cucumber, JavaScript, Jira, Xray, TestRail, Oracle, Java y Angular. Valdemoro.</p>
 
         <main>
+            <div class="ticker" aria-hidden="true">
+                <div class="ticker-track">
+                    <span>QA Automation Engineer / SDET * desde febrero de 2026 * Playwright * Karate * Cucumber * JavaScript * Jira * Xray * TestRail * Oracle * Java * Angular * Valdemoro * </span>
+                    <span>QA Automation Engineer / SDET * desde febrero de 2026 * Playwright * Karate * Cucumber * JavaScript * Jira * Xray * TestRail * Oracle * Java * Angular * Valdemoro * </span>
+                </div>
+            </div>
+
             <section id="top">
                 <div class="section hero">
                     <div class="hero-bar">
@@ -75,12 +82,6 @@
                 </div>
             </section>
 
-            <div class="ticker" aria-hidden="true">
-                <div class="ticker-track">
-                    <span>QA Automation Engineer / SDET * desde febrero de 2026 * Playwright * Karate * Cucumber * JavaScript * Jira * Xray * TestRail * Oracle * Java * Angular * Valdemoro * </span>
-                    <span>QA Automation Engineer / SDET * desde febrero de 2026 * Playwright * Karate * Cucumber * JavaScript * Jira * Xray * TestRail * Oracle * Java * Angular * Valdemoro * </span>
-                </div>
-            </div>
             <div class="sparkline" aria-hidden="true"></div>
 
             <section id="aboutMe" data-section>
@@ -391,6 +392,7 @@
 
             <div class="sparkline" aria-hidden="true"></div>
 
+            <!-- Oculto de momento
             <section id="contratame" data-section>
                 <div class="section">
                     <h2>
@@ -405,6 +407,7 @@
             </section>
 
             <div class="sparkline" aria-hidden="true"></div>
+            -->
 
             <section id="contact" data-section>
                 <div class="section">
@@ -436,33 +439,36 @@
                 <p>El libro de visitas no guarda firmas en ningún servidor. Si quieres dejar la tuya, te lleva al contacto.</p>
                 <p><a class="bevel" href="#contact">Firmar el libro</a></p>
 
-                <div class="webring">
-                    <p class="webring-title">Anillo de esta web</p>
+                <div class="webring" data-webring-site="portfolio">
+                    <p class="webring-title">Anillo b3rt1c</p>
                     <p class="webring-nav">
-                        <a class="link" href="#projects">← anterior</a>
+                        <a class="link" data-webring="prev" href="https://recetas.b3rt1c.net">← Recetario C</a>
                         <span>b3rt1c.net</span>
-                        <a class="link" href="#contact">siguiente →</a>
+                        <a class="link" data-webring="next" href="https://recetas.b3rt1c.net">Recetario C →</a>
                     </p>
-                    <p class="counter-note">Anillo decorativo: solo enlaza a secciones de esta misma página.</p>
+                    <p class="counter-note">Webring de mis proyectos y landing pages bajo b3rt1c.net.</p>
                 </div>
 
                 <div class="counter" id="hitCounter">
-                    <p class="counter-label">Has entrado</p>
+                    <p class="counter-label">Visitas</p>
                     <p class="hit-digits" id="hitDigits" aria-hidden="true">000000</p>
-                    <p class="counter-note">Contador decorativo guardado solo en este navegador, sin servicios externos.</p>
+                    <p class="counter-note" id="counterNote">Contador global sin cookies ni rastreo personal.</p>
                 </div>
 
                 <div class="btn-wall">
-                    <span class="btn88 btn88-any"><span>Se ve bien</span><span>en el tuyo</span></span>
-                    <span class="btn88 btn88-work"><span>En obras</span><span>con cariño</span></span>
+                    <span class="btn88 btn88-arch"><span>i use arch</span><span>btw</span></span>
                     <a class="btn88 btn88-gh" href="https://github.com/B3RT1C"><span>GitHub</span><span>B3RT1C</span></a>
+                    <span class="btn88 btn88-vim"><span>blazingly fast</span><span>with vim</span></span>
                     <a class="btn88 btn88-in" href="https://www.linkedin.com/in/albertopn"><span>LinkedIn</span><span>albertopn</span></a>
+                    <span class="btn88 btn88-works"><span>it works on</span><span>my machine</span></span>
                     <a class="btn88 btn88-mail" href="mailto:albertopn31@gmail.com"><span>E-mail</span><span>escríbeme</span></a>
+                    <span class="btn88 btn88-git"><span>git push</span><span>--force</span></span>
                     <a class="btn88 btn88-cv" href="/AlbertoPerezCV.pdf"><span>Mi CV</span><span>PDF</span></a>
-                    <a class="btn88 btn88-town" href="#contratame"><span>Valdemoro</span><span>webs</span></a>
+                    <!-- Oculto de momento: <a class="btn88 btn88-town" href="#contratame"><span>Valdemoro</span><span>webs</span></a> -->
+                    <span class="btn88 btn88-qa"><span>no bugs, just</span><span>features</span></span>
                     <span class="btn88 btn88-html"><span>Hecho con</span><span>HTML</span></span>
-                    <span class="btn88 btn88-note"><span>Sin</span><span>rastreo</span></span>
                     <a class="btn88 btn88-top" href="#top"><span>Volver</span><span>arriba</span></a>
+                    <span class="btn88 btn88-note"><span>Sin</span><span>rastreo</span></span>
                 </div>
 
                 <img id="staffWizard" src="/img/staffwizard.gif" width="93" height="89" alt="" loading="lazy">
@@ -476,6 +482,6 @@
                 .task-tray { display: none !important; }
             </style>
         </noscript>
-        <script src="/app.js?v=20261103"></script>
+        <script src="/app.js?v=20261118"></script>
     </body>
 </html>

@@ -85,19 +85,105 @@ if ("IntersectionObserver" in window && sections.length) {
 }
 
 const digits = document.getElementById("hitDigits");
-try {
-    const storageKey = "b3rt1c-contador-local";
-    const sessionKey = "b3rt1c-contador-sesion";
-    let visits = Number(localStorage.getItem(storageKey) || "0");
-    if (!Number.isFinite(visits) || visits < 0) {
-        visits = 0;
+if (digits) {
+    const counterNote = document.getElementById("counterNote");
+    const renderVisits = function (count) {
+        const safe = Number.isFinite(count) && count >= 0 ? Math.floor(count) : 0;
+        digits.textContent = String(safe).padStart(6, "0");
+    };
+
+    const runLocalFallback = function () {
+        try {
+            const storageKey = "b3rt1c-contador-local";
+            const sessionKey = "b3rt1c-contador-sesion";
+            let visits = Number(localStorage.getItem(storageKey) || "0");
+            if (!Number.isFinite(visits) || visits < 0) {
+                visits = 0;
+            }
+            if (!sessionStorage.getItem(sessionKey) || visits === 0) {
+                visits += 1;
+                localStorage.setItem(storageKey, String(visits));
+                sessionStorage.setItem(sessionKey, "1");
+            }
+            renderVisits(visits);
+        } catch (error) {
+            renderVisits(0);
+        }
+    };
+
+    const globalSessionKey = "b3rt1c-contador-global-sesion";
+    let alreadyCounted = false;
+    try {
+        alreadyCounted = Boolean(sessionStorage.getItem(globalSessionKey));
+    } catch (error) {
+        alreadyCounted = false;
     }
-    if (!sessionStorage.getItem(sessionKey)) {
-        visits += 1;
-        localStorage.setItem(storageKey, String(visits));
-        sessionStorage.setItem(sessionKey, "1");
+
+    if ("fetch" in window) {
+        fetch("/api/visits", {
+            method: alreadyCounted ? "GET" : "POST",
+            cache: "no-store"
+        })
+            .then(function (res) {
+                if (!res.ok) {
+                    throw new Error("visits-api");
+                }
+                return res.json();
+            })
+            .then(function (data) {
+                if (!data || typeof data.visits !== "number") {
+                    throw new Error("visits-invalid");
+                }
+                if (!alreadyCounted) {
+                    try {
+                        sessionStorage.setItem(globalSessionKey, "1");
+                    } catch (error) {}
+                }
+                renderVisits(data.visits);
+            })
+            .catch(function () {
+                if (counterNote) {
+                    counterNote.textContent = "Contador local de este navegador (el contador global se activa al enlazar KV en Cloudflare).";
+                }
+                runLocalFallback();
+            });
+    } else {
+        runLocalFallback();
     }
-    digits.textContent = String(visits).padStart(6, "0");
-} catch (error) {
-    digits.textContent = "000000";
+}
+
+const webring = document.querySelector("[data-webring-site]");
+if (webring && "fetch" in window) {
+    const currentId = webring.getAttribute("data-webring-site");
+    fetch("/webring.json")
+        .then(function (res) {
+            if (!res.ok) {
+                throw new Error("webring");
+            }
+            return res.json();
+        })
+        .then(function (sites) {
+            if (!Array.isArray(sites) || sites.length < 2) {
+                return;
+            }
+            const idx = sites.findIndex(function (s) {
+                return s.id === currentId;
+            });
+            if (idx === -1) {
+                return;
+            }
+            const prev = sites[(idx - 1 + sites.length) % sites.length];
+            const next = sites[(idx + 1) % sites.length];
+            const prevLink = webring.querySelector('[data-webring="prev"]');
+            const nextLink = webring.querySelector('[data-webring="next"]');
+            if (prevLink && prev) {
+                prevLink.href = prev.url;
+                prevLink.textContent = "← " + prev.name;
+            }
+            if (nextLink && next) {
+                nextLink.href = next.url;
+                nextLink.textContent = next.name + " →";
+            }
+        })
+        .catch(function () {});
 }
