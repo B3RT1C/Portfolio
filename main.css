@@ -620,6 +620,7 @@ h1 {
     vertical-align: middle;
 }
 
+.click-link img,
 #clickHere {
     width: 64px;
     height: auto;
