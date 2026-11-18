@@ -720,6 +720,7 @@ figure figcaption {
 .email-gif {
     width: 88px;
     height: auto;
+    margin-left: 8px;
     vertical-align: middle;
 }
 
