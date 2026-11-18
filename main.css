@@ -613,17 +613,104 @@ h1 {
     vertical-align: middle;
 }
 
+.project-title-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.project-title-link:hover,
+.project-title-link:focus-visible {
+    color: #fff;
+    background: var(--navy);
+    outline: 2px solid var(--yellow);
+    text-decoration: none;
+}
+
 .click-link {
-    display: inline-block;
-    margin-left: 6px;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 8px;
     line-height: 0;
     vertical-align: middle;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
 }
 
 .click-link img,
 #clickHere {
-    width: 64px;
+    display: inline-block;
+    width: 68px;
     height: auto;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.click-link:hover img,
+.click-link:focus-visible img {
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 6px var(--magenta));
+}
+
+.tech-stack-container {
+    margin: 12px 12px 8px;
+}
+
+.tech-stack-label {
+    margin: 0 0 6px !important;
+    color: var(--cyan);
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.tech-stack-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+.tech-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 8px;
+    color: #fff;
+    background: #08121a;
+    border: 2px outset #5cefff;
+    box-shadow: 2px 2px 0 #000;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    line-height: 1.1;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.tech-pill:hover {
+    color: #111;
+    background: var(--yellow);
+    border-color: #fff #806000 #806000 #fff;
+}
+
+.tech-pill img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 12px 4px !important;
 }
 
 .soon {
