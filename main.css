@@ -65,11 +65,11 @@ html {
 
 @keyframes bg-scroll-nw {
     from {
-        background-position: 0 0;
+        background-position: 0 0, center center;
     }
 
     to {
-        background-position: -180px -250px;
+        background-position: -160px -240px, center center;
     }
 }
 
@@ -79,10 +79,22 @@ body {
     font-size: var(--text);
     line-height: var(--lh);
     color: var(--ink);
-    background-color: #000;
-    background-image: url("/img/body_background_120x200.gif");
-    background-size: 180px 250px;
-    background-attachment: fixed;
+    background-color: #040911;
+    background-image:
+        url("/img/body_background_transparent.gif"),
+        url("/img/acid_grunge_bg.svg");
+    background-size:
+        160px 240px,
+        cover;
+    background-position:
+        0 0,
+        center center;
+    background-attachment:
+        fixed,
+        fixed;
+    background-repeat:
+        repeat,
+        no-repeat;
     animation: bg-scroll-nw 18s linear infinite;
 }
 
