@@ -601,7 +601,7 @@ h1 {
     position: relative;
     margin: 10px 12px 12px;
     padding: 12px 14px;
-    background: #08111c;
+    background-color: #000000;
     background-image:
         linear-gradient(rgba(92, 239, 255, 0.12) 1px, transparent 1px),
         linear-gradient(90deg, rgba(92, 239, 255, 0.12) 1px, transparent 1px);
