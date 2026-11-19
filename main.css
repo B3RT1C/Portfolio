@@ -23,6 +23,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "Kabisat";
+    src: url("/fonts/kabisat-demo.italic-tall.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --ink: #fff;
     --cyan: #5cefff;
@@ -284,19 +292,62 @@ a.btn88,
 
 .ticker {
     position: relative;
-    height: 2.1rem;
+    height: 2.3rem;
     margin: 10px 8px 14px;
     overflow: hidden;
-    color: var(--yellow);
-    background: #000;
-    border: 2px dotted var(--cyan);
-    box-shadow: 3px 3px 0 var(--magenta);
+    color: #d6ffd6;
+    background: #020508;
+    border: 2px solid #00ff66;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.25), 3px 3px 0 var(--magenta);
     font-family: var(--font-display);
-    font-size: 1.35rem;
+    font-size: 1.45rem;
+    letter-spacing: 0.5px;
     cursor: grab;
     user-select: none;
     -webkit-user-select: none;
     touch-action: pan-y;
+}
+
+.ws-badge {
+    display: inline-flex;
+    align-items: center;
+    background: #00ff66;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.15rem;
+    padding: 1px 7px;
+    margin-right: 10px;
+    letter-spacing: 1px;
+    animation: ws-pulse 2s infinite ease-in-out;
+}
+
+@keyframes ws-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.ws-sym {
+    color: #5cefff;
+    font-weight: bold;
+}
+
+.ws-val {
+    color: #ffe14a;
+    margin: 0 4px;
+}
+
+.ws-chg.up {
+    color: #00ff66;
+    font-weight: bold;
+}
+
+.ws-sep {
+    color: #3b5445;
+    margin: 0 12px;
 }
 
 .ticker:active,
@@ -356,6 +407,7 @@ section {
 }
 
 .section {
+    position: relative;
     width: min(920px, calc(100% - 24px));
     margin: 0 auto;
     padding: 0 0 18px;
@@ -365,6 +417,28 @@ section {
     background-size: 18px 18px;
     border: 3px dotted var(--cyan);
     box-shadow: 5px 5px 0 #3a0048;
+}
+
+.section::before,
+.section::after {
+    content: "+";
+    position: absolute;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--cyan);
+    opacity: 0.5;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.section::before {
+    top: 2px;
+    left: 6px;
+}
+
+.section::after {
+    bottom: 3px;
+    right: 6px;
 }
 
 .section h2,
@@ -484,19 +558,103 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
+    gap: 12px;
     min-width: 0;
-    padding: 10px 12px 8px;
+    padding: 10px 14px 8px;
     background-image: url("/img/header_background.jpeg");
     background-size: 252px 190px;
     background-repeat: repeat;
     border-bottom: 3px solid #066;
+    overflow: hidden;
+}
+
+.flank-barcode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    flex: 0 0 auto;
+    user-select: none;
+}
+
+.flank-barcode-lines {
+    width: 14px;
+    height: 64px;
+    background: repeating-linear-gradient(
+        to bottom,
+        #000 0px, #000 2px,
+        transparent 2px, transparent 3px,
+        #000 3px, #000 6px,
+        transparent 6px, transparent 8px,
+        #000 8px, #000 10px,
+        transparent 10px, transparent 11px,
+        #000 11px, #000 14px,
+        transparent 14px, transparent 16px,
+        #000 16px, #000 18px,
+        transparent 18px, transparent 20px,
+        #000 20px, #000 23px,
+        transparent 23px, transparent 25px
+    );
+    opacity: 0.85;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+.flank-barcode-num {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: #003333;
+    line-height: 1;
+    letter-spacing: 1px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
 }
 
 h1 {
     min-width: 0;
     margin: 0;
     font-size: inherit;
+    flex: 1 1 auto;
+}
+
+.kabisat-heading {
+    margin: 0;
+    font-family: "Kabisat", sans-serif;
+    font-size: clamp(1.3rem, 2.75vw, 2.1rem);
+    line-height: 1.1;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    color: #ff55e1;
+    text-shadow:
+        1px 1px 0 #000,
+        2px 2px 0 #000,
+        3px 3px 0 #000,
+        4px 4px 0 #000,
+        5px 5px 0 #000;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
+}
+
+.first-name,
+.last-name {
+    display: inline;
+    white-space: nowrap;
+}
+
+.acc-e {
+    position: relative;
+    display: inline-block;
+}
+
+.acc-e::after {
+    content: "";
+    position: absolute;
+    top: -0.16em;
+    left: 0.28em;
+    width: 0.22em;
+    height: 0.12em;
+    background: #ff55e1;
+    transform: skew(-25deg) rotate(-18deg);
+    box-shadow: 1px 1px 0 #000, 2px 2px 0 #000;
 }
 
 #nombre {
@@ -512,6 +670,31 @@ h1 {
     max-width: 40vw;
     object-fit: contain;
     flex: 0 0 auto;
+}
+
+.doc-tech-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 10px 0 12px;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+}
+
+.doc-spec-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 8px;
+    background: #020a0f;
+    color: #5cefff;
+    border: 1px solid #005566;
+    box-shadow: 2px 2px 0 #3a0048;
+}
+
+.doc-spec-pill.alt {
+    color: #ffe14a;
+    border-color: #554400;
 }
 
 .hero-main {
@@ -1329,6 +1512,20 @@ a.btn88:active {
         --taskbar: 48px;
     }
 
+    .flank-barcode {
+        display: none;
+    }
+
+    .ticker {
+        font-size: 1.25rem;
+        height: 2.1rem;
+    }
+
+    .ws-badge {
+        font-size: 1rem;
+        padding: 1px 5px;
+    }
+
     .section {
         width: calc(100% - 16px);
     }
@@ -1378,6 +1575,18 @@ a.btn88:active {
 
     .skills-retro-list {
         justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .kabisat-heading {
+        line-height: 1.15;
+        font-size: clamp(1.05rem, 4.4vw, 1.25rem);
+    }
+
+    .first-name,
+    .last-name {
+        display: block;
     }
 }
 
