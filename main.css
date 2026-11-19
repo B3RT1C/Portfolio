@@ -507,8 +507,8 @@ h1 {
 #hylicsRunning {
     display: block;
     width: auto;
-    height: 76px;
-    max-width: 40vw;
+    height: clamp(84px, 12vw, 125px);
+    max-width: 38vw;
     object-fit: contain;
     flex: 0 0 auto;
 }
@@ -1347,9 +1347,9 @@ a.btn88:active {
     }
 
     #hylicsRunning {
-        height: 52px;
+        height: clamp(48px, 15vw, 62px);
         width: auto;
-        max-width: 42vw;
+        max-width: 36vw;
     }
 
     .hero-main {
