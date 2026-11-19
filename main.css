@@ -335,7 +335,7 @@ section {
     padding: 0 0 18px;
     color: var(--ink);
     background-color: #000;
-    background-image: radial-gradient(rgba(92, 239, 255, 0.42) 1.2px, transparent 1.6px);
+    background-image: radial-gradient(rgba(92, 239, 255, 0.28) 1px, transparent 1.3px);
     background-size: 18px 18px;
     border: 3px dotted var(--cyan);
     box-shadow: 5px 5px 0 #3a0048;
@@ -773,8 +773,8 @@ h1 {
     margin: 6px 14px 14px;
     padding: 8px 10px;
     background-color: #070712;
-    background-image: linear-gradient(rgba(255, 122, 242, 0.24) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(92, 239, 255, 0.24) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 122, 242, 0.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(92, 239, 255, 0.14) 1px, transparent 1px);
     background-size: 12px 12px;
     border: 2px dashed var(--magenta);
     list-style: none;
@@ -783,16 +783,20 @@ h1 {
 .skill-chip {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 3px 9px;
+    gap: 8px;
+    width: 138px;
+    height: 32px;
+    box-sizing: border-box;
+    padding: 0 8px;
     color: #fff;
     background: #08121a;
     border: 2px outset #5cefff;
     box-shadow: 2px 2px 0 #000;
     font-family: var(--font-display);
     font-size: 1.15rem;
-    line-height: 1.1;
+    line-height: 1;
     white-space: nowrap;
+    overflow: hidden;
     user-select: none;
     transition: transform 0.1s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
@@ -805,6 +809,7 @@ h1 {
 }
 
 .skill-chip img {
+    flex-shrink: 0;
     width: 18px;
     height: 18px;
     object-fit: contain;
@@ -819,8 +824,9 @@ h1 {
 }
 
 .skill-chip img.wordmark {
+    flex-shrink: 0;
     width: auto;
-    max-width: 44px;
+    max-width: 34px;
     height: 14px;
     background: #fff;
     border: 1px inset #888;
@@ -829,15 +835,23 @@ h1 {
 }
 
 .skill-chip img.duke-gif {
+    flex-shrink: 0;
     width: 20px;
     height: 25px;
     object-fit: contain;
 }
 
 .skill-chip img.linux-gif {
+    flex-shrink: 0;
     width: 22px;
     height: 22px;
     object-fit: contain;
+}
+
+.skill-chip span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .skillList {
@@ -847,8 +861,8 @@ h1 {
     margin: 8px 14px 16px;
     padding: 10px;
     background-color: #070712;
-    background-image: linear-gradient(rgba(255, 122, 242, 0.24) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(92, 239, 255, 0.24) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 122, 242, 0.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(92, 239, 255, 0.14) 1px, transparent 1px);
     background-size: 12px 12px;
     border: 2px dashed var(--magenta);
 }
@@ -944,7 +958,7 @@ footer {
     color: var(--ink);
     text-align: center;
     background-color: #000;
-    background-image: radial-gradient(rgba(92, 239, 255, 0.42) 1.2px, transparent 1.6px);
+    background-image: radial-gradient(rgba(92, 239, 255, 0.28) 1px, transparent 1.3px);
     background-size: 18px 18px;
     border: 3px dotted var(--cyan);
     box-shadow: 5px 5px 0 #3a0048;
@@ -1181,6 +1195,16 @@ a.btn88:active {
     .exp {
         width: 32px;
         height: 32px;
+    }
+
+    .skills-retro-list {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .skill-chip {
+        width: 100%;
     }
 }
 
