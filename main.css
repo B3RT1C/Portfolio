@@ -675,6 +675,7 @@ h1 {
 .acc-e {
     position: relative;
     display: inline-block;
+    margin-right: 0.1em;
 }
 
 .acc-e::after {
