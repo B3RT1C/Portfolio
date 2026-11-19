@@ -617,12 +617,44 @@ h1 {
     flex: 1 1 auto;
 }
 
+.title-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.title-doc-stamp {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-display);
+    font-size: clamp(0.85rem, 1.8vw, 1.05rem);
+    line-height: 1;
+    color: #003840;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 26px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.title-doc-stamp .stamp-badge {
+    background: rgba(0, 0, 0, 0.75);
+    color: #5cefff;
+    padding: 1px 4px;
+    font-size: 0.85em;
+    border: 1px solid #5cefff;
+}
+
 .kabisat-heading {
     margin: 0;
     font-family: "Kabisat", sans-serif;
-    font-size: clamp(1.3rem, 2.75vw, 2.1rem);
-    line-height: 1.1;
-    letter-spacing: 1px;
+    font-size: clamp(0.95rem, 2.9vw, 2.1rem);
+    line-height: 1;
+    letter-spacing: 0.5px;
     text-transform: lowercase;
     color: #ff55e1;
     text-shadow:
@@ -632,11 +664,6 @@ h1 {
         4px 4px 0 #000,
         5px 5px 0 #000;
     filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
-}
-
-.first-name,
-.last-name {
-    display: inline;
     white-space: nowrap;
 }
 
@@ -1576,17 +1603,20 @@ a.btn88:active {
     .skills-retro-list {
         justify-content: center;
     }
-}
 
-@media (max-width: 600px) {
-    .kabisat-heading {
-        line-height: 1.15;
-        font-size: clamp(1.05rem, 4.4vw, 1.25rem);
+    .title-doc-stamp {
+        margin-bottom: 14px;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
     }
 
-    .first-name,
-    .last-name {
-        display: block;
+    .kabisat-heading {
+        font-size: clamp(0.85rem, 3.4vw, 1.25rem);
+        white-space: nowrap;
+    }
+
+    #hylicsRunning {
+        height: 48px;
     }
 }
 
