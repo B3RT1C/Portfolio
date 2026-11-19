@@ -1,3 +1,192 @@
+/* ==========================================================================
+   Web Components: <tech-pill> y <tech-stack>
+   Ecosistema declarativo y reutilizable para badges de tecnologías.
+   ========================================================================== */
+
+const TECH_REGISTRY = {
+    // Lenguajes
+    "javascript": { label: "JavaScript", icon: "/img/icons/javascript.svg" },
+    "js": { label: "JavaScript", icon: "/img/icons/javascript.svg" },
+    "typescript": { label: "TypeScript", icon: "/img/typescriptLogo.png" },
+    "ts": { label: "TypeScript", icon: "/img/typescriptLogo.png" },
+    "python": { label: "Python", icon: "/img/icons/python.svg" },
+    "java": { label: "Java", icon: "/img/javaLogo.png" },
+    "lua": { label: "Lua", icon: "/img/luaLogo.png" },
+    "sql": { label: "SQL", icon: "/img/mysqlLogo.png" },
+    "mysql": { label: "MySQL", icon: "/img/mysqlLogo.png" },
+    "html": { label: "HTML", icon: "/img/htmlLogo.svg" },
+    "css": { label: "CSS", icon: "/img/cssLogo.svg" },
+
+    // Frontend & Backend Frameworks
+    "angular": { label: "Angular", icon: "/img/angularLogo.png" },
+    "angular material": { label: "Angular Material", icon: "/img/angularLogo.png" },
+    "spring": { label: "Spring Boot", icon: "/img/springLogo.png" },
+    "spring boot": { label: "Spring Boot", icon: "/img/springLogo.png" },
+    "fastapi": { label: "FastAPI", icon: "/img/icons/fastapi.svg" },
+
+    // QA & Testing
+    "playwright": { label: "Playwright", icon: "/img/icons/playwright.svg" },
+    "karate": { label: "Karate", icon: "/img/icons/karate.svg" },
+    "cucumber": { label: "Cucumber", icon: "/img/icons/cucumber.svg" },
+    "gherkin": { label: "Gherkin", icon: "/img/icons/gherkin.svg" },
+    "postman": { label: "Postman", icon: "/img/icons/postman.svg" },
+    "swagger": { label: "Swagger", icon: "/img/icons/swagger.svg" },
+    "pytest": { label: "Pytest", icon: "/img/icons/pytest.svg" },
+    "xray": { label: "Xray", icon: "/img/icons/xray.svg" },
+    "testrail": { label: "TestRail", icon: "/img/icons/testrail.svg" },
+
+    // Herramientas, Cloud & DevOps
+    "git": { label: "Git", icon: "/img/gitLogo.svg" },
+    "github": { label: "GitHub", icon: "/img/githubLogo.svg" },
+    "docker": { label: "Docker", icon: "/img/dockerLogo.png" },
+    "maven": { label: "Maven", icon: "/img/mavenLogo.png" },
+    "jenkins": { label: "Jenkins", icon: "/img/icons/jenkins.svg" },
+    "jira": { label: "Jira", icon: "/img/icons/jira.svg" },
+    "confluence": { label: "Confluence", icon: "/img/icons/confluence.svg" },
+    "slack": { label: "Slack", icon: "/img/icons/slack.svg" },
+    "android": { label: "Android", icon: "/img/icons/android.svg" },
+    "ios": { label: "iOS", icon: "/img/icons/apple.svg" },
+    "apple": { label: "iOS", icon: "/img/icons/apple.svg" },
+    "postgresql": { label: "PostgreSQL", icon: "/img/postgresqlLogo.png" },
+    "postgres": { label: "PostgreSQL", icon: "/img/postgresqlLogo.png" },
+    "mongodb": { label: "MongoDB", icon: "/img/mongodbLogo.svg" },
+    "sqlite": { label: "SQLite", icon: "/img/icons/sqlite.svg" },
+    "sqlmodel": { label: "SQLModel", icon: "/img/icons/sqlite.svg" },
+    "sqlite / sqlmodel": { label: "SQLite / SQLModel", icon: "/img/icons/sqlite.svg" },
+    "oracle": { label: "Oracle", icon: "/img/icons/oracle.svg" },
+    "vscode": { label: "VS Code", icon: "/img/vsCodeLogo.svg" },
+    "vs code": { label: "VS Code", icon: "/img/vsCodeLogo.svg" },
+    "intellij": { label: "IntelliJ", icon: "/img/intellijLogo.svg" },
+    "eclipse": { label: "Eclipse", icon: "/img/eclipseLogo.svg" },
+    "linux": { label: "Linux", icon: "/img/peguinDance.gif" },
+    "vim": { label: "Vim", icon: "/img/vimLogo.png" },
+    "vanilla js (pwa)": { label: "Vanilla JS (PWA)", icon: "/img/icons/javascript.svg" },
+    "vanilla js": { label: "Vanilla JS", icon: "/img/icons/javascript.svg" }
+};
+
+if (typeof window !== "undefined") {
+    window.TECH_REGISTRY = TECH_REGISTRY;
+}
+
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function resolveTech(raw) {
+    if (!raw || typeof raw !== "string") return null;
+    const trimmed = raw.trim();
+    if (!trimmed) return null;
+
+    const lower = trimmed.toLowerCase();
+    if (TECH_REGISTRY[lower]) {
+        return {
+            name: trimmed,
+            icon: TECH_REGISTRY[lower].icon || null
+        };
+    }
+
+    // Coincidencia por palabra clave más larga primero (ej. "spring boot" antes de "spring")
+    const keys = Object.keys(TECH_REGISTRY).sort(function (a, b) {
+        return b.length - a.length;
+    });
+    for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        const escaped = key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const regex = new RegExp("(?:^|[^a-z0-9])" + escaped + "(?:$|[^a-z0-9])", "i");
+        if (regex.test(lower)) {
+            return {
+                name: trimmed,
+                icon: TECH_REGISTRY[key].icon || null
+            };
+        }
+    }
+
+    return {
+        name: trimmed,
+        icon: null
+    };
+}
+
+class TechPill extends HTMLElement {
+    static get observedAttributes() {
+        return ["name", "icon"];
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue !== newValue) {
+            this.render();
+        }
+    }
+
+    render() {
+        const rawName = this.getAttribute("name") || this.textContent.trim();
+        if (!rawName) return;
+
+        const resolved = resolveTech(rawName);
+        const iconSrc = this.getAttribute("icon") || (resolved ? resolved.icon : null);
+        const displayName = this.getAttribute("name") || (resolved ? resolved.name : rawName);
+
+        this.classList.add("tech-pill");
+        this.innerHTML = `${iconSrc ? `<img src="${encodeURI(iconSrc)}" width="16" height="16" alt="" loading="lazy">` : ""}<span>${escapeHtml(displayName)}</span>`;
+    }
+}
+
+class TechStack extends HTMLElement {
+    static get observedAttributes() {
+        return ["items", "label"];
+    }
+
+    connectedCallback() {
+        this.render();
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (oldValue !== newValue) {
+            this.render();
+        }
+    }
+
+    render() {
+        const rawItems = this.getAttribute("items");
+        const label = this.getAttribute("label") || "Tecnologías:";
+
+        let items = [];
+        if (rawItems) {
+            items = rawItems.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+        } else {
+            if (this.querySelector("tech-pill")) return;
+        }
+
+        this.classList.add("tech-stack-container");
+        this.innerHTML = `
+            <div class="tech-stack-label">${escapeHtml(label)}</div>
+            <div class="tech-stack-badges">
+                ${items.map(function (item) {
+                    return `<tech-pill name="${escapeHtml(item)}"></tech-pill>`;
+                }).join("")}
+            </div>
+        `;
+    }
+}
+
+if (typeof customElements !== "undefined") {
+    if (!customElements.get("tech-pill")) {
+        customElements.define("tech-pill", TechPill);
+    }
+    if (!customElements.get("tech-stack")) {
+        customElements.define("tech-stack", TechStack);
+    }
+}
+
 const sidebar = document.getElementById("sidebar");
 const sidebarButton = document.getElementById("sidebarButton");
 

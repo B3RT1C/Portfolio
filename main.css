@@ -679,7 +679,9 @@ h1 {
     filter: drop-shadow(0 0 6px var(--magenta));
 }
 
+tech-stack,
 .tech-stack-container {
+    display: block;
     margin: 12px 12px 8px;
 }
 
@@ -698,6 +700,7 @@ h1 {
     gap: 6px;
 }
 
+tech-pill,
 .tech-pill {
     display: inline-flex;
     align-items: center;
@@ -714,12 +717,14 @@ h1 {
     user-select: none;
 }
 
+tech-pill:hover,
 .tech-pill:hover {
     color: #111;
     background: var(--yellow);
     border-color: #fff #806000 #806000 #fff;
 }
 
+tech-pill img,
 .tech-pill img {
     width: 16px;
     height: 16px;
