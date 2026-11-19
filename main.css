@@ -55,6 +55,24 @@ html {
     cursor: url("/img/cursor.png") 1 1, auto;
 }
 
+@keyframes bg-scroll-nw {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -180px -250px;
+    }
+}
+
+@keyframes dots-scroll-nw {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -36px -36px;
+    }
+}
+
 body {
     margin: 0;
     font-family: var(--font-body);
@@ -64,6 +82,8 @@ body {
     background-color: #000;
     background-image: url("/img/body_background_120x200.gif");
     background-size: 180px 250px;
+    background-attachment: fixed;
+    animation: bg-scroll-nw 30s linear infinite;
 }
 
 img {
@@ -339,6 +359,7 @@ section {
     background-size: 18px 18px;
     border: 3px dotted var(--cyan);
     box-shadow: 5px 5px 0 #3a0048;
+    animation: dots-scroll-nw 6s linear infinite;
 }
 
 .section h2,
@@ -971,6 +992,7 @@ footer {
     background-size: 18px 18px;
     border: 3px dotted var(--cyan);
     box-shadow: 5px 5px 0 #3a0048;
+    animation: dots-scroll-nw 6s linear infinite;
 }
 
 .footer-panel > p,
@@ -1222,6 +1244,9 @@ a.btn88:active {
         scroll-behavior: auto;
     }
 
+    body,
+    .section,
+    .footer-panel,
     .ticker-track,
     .link:hover,
     .link:focus-visible {
