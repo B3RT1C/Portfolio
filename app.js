@@ -376,3 +376,120 @@ if (webring && "fetch" in window) {
         })
         .catch(function () {});
 }
+
+/* ==========================================================================
+   Ticker interactivo: Auto-scroll continuo + Grab & Drag para deslizar
+   ========================================================================== */
+(function initTicker() {
+    const ticker = document.querySelector(".ticker");
+    const track = document.querySelector(".ticker-track");
+    if (!ticker || !track) return;
+
+    // Duplicar spans suficientes (al menos 4) para asegurar cobertura continua en cualquier pantalla
+    const originalSpans = Array.from(track.querySelectorAll("span"));
+    if (originalSpans.length > 0) {
+        while (track.querySelectorAll("span").length < 4) {
+            originalSpans.forEach(function (s) {
+                track.appendChild(s.cloneNode(true));
+            });
+        }
+    }
+
+    // El control pasa al bucle RAF para permitir arrastre fluido y continuo
+    track.style.animation = "none";
+
+    let offset = 0;
+    let lastTime = performance.now();
+    const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const baseSpeed = prefersReducedMotion ? 0 : 45; // px por segundo
+
+    let isDragging = false;
+    let startX = 0;
+    let dragStartOffset = 0;
+    let velocity = 0;
+    let lastDragX = 0;
+    let lastDragTime = 0;
+
+    function getSpanWidth() {
+        const first = track.querySelector("span");
+        return first ? first.offsetWidth : 1000;
+    }
+
+    function wrapOffset(val, spanWidth) {
+        if (spanWidth <= 0) return val;
+        while (val <= -spanWidth) val += spanWidth;
+        while (val > 0) val -= spanWidth;
+        return val;
+    }
+
+    function tick(now) {
+        const dt = Math.min((now - lastTime) / 1000, 0.1);
+        lastTime = now;
+
+        if (!isDragging) {
+            if (Math.abs(velocity) > 0.5) {
+                offset += velocity * dt;
+                velocity *= Math.exp(-4 * dt); // fricción suave de inercia
+            } else {
+                velocity = 0;
+                offset -= baseSpeed * dt;
+            }
+            const spanW = getSpanWidth();
+            offset = wrapOffset(offset, spanW);
+            track.style.transform = `translateX(${offset}px)`;
+        }
+
+        requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+
+    ticker.addEventListener("pointerdown", function (e) {
+        isDragging = true;
+        startX = e.clientX;
+        dragStartOffset = offset;
+        lastDragX = e.clientX;
+        lastDragTime = performance.now();
+        velocity = 0;
+        ticker.classList.add("is-dragging");
+        try {
+            ticker.setPointerCapture(e.pointerId);
+        } catch (err) {}
+    });
+
+    ticker.addEventListener("pointermove", function (e) {
+        if (!isDragging) return;
+        const now = performance.now();
+        const dt = (now - lastDragTime) / 1000;
+        if (dt > 0.008) {
+            velocity = (e.clientX - lastDragX) / dt;
+            lastDragX = e.clientX;
+            lastDragTime = now;
+        }
+
+        const dx = e.clientX - startX;
+        const spanW = getSpanWidth();
+        offset = wrapOffset(dragStartOffset + dx, spanW);
+        track.style.transform = `translateX(${offset}px)`;
+    });
+
+    function endDrag(e) {
+        if (!isDragging) return;
+        isDragging = false;
+        ticker.classList.remove("is-dragging");
+        try {
+            ticker.releasePointerCapture(e.pointerId);
+        } catch (err) {}
+    }
+
+    ticker.addEventListener("pointerup", endDrag);
+    ticker.addEventListener("pointercancel", endDrag);
+
+    // Soporte para rueda de ratón / trackpad horizontal
+    ticker.addEventListener("wheel", function (e) {
+        const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+        const spanW = getSpanWidth();
+        offset = wrapOffset(offset - delta * 0.8, spanW);
+        track.style.transform = `translateX(${offset}px)`;
+        e.preventDefault();
+    }, { passive: false });
+})();

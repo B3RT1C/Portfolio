@@ -301,6 +301,15 @@ a.btn88,
     box-shadow: 3px 3px 0 var(--magenta);
     font-family: var(--font-display);
     font-size: 1.35rem;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y;
+}
+
+.ticker:active,
+.ticker.is-dragging {
+    cursor: grabbing;
 }
 
 .ticker-track {
