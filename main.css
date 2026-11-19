@@ -873,12 +873,19 @@ tech-pill img,
     list-style: none;
 }
 
+.skills-retro-list li,
+.section .skills-retro-list li,
+.section .skills-retro-list li + li {
+    margin: 0;
+}
+
 .skill-chip {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     width: 138px;
     height: 32px;
+    margin: 0;
     box-sizing: border-box;
     padding: 0 8px;
     color: #fff;
