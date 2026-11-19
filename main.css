@@ -488,7 +488,8 @@ section {
     min-width: 0;
     padding: 10px 12px 8px;
     background-image: url("/img/header_background.jpeg");
-    background-size: cover;
+    background-size: 252px 190px;
+    background-repeat: repeat;
     border-bottom: 3px solid #066;
 }
 
