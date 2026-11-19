@@ -275,7 +275,6 @@ if ("IntersectionObserver" in window && sections.length) {
 
 const digits = document.getElementById("hitDigits");
 if (digits) {
-    const counterNote = document.getElementById("counterNote");
     const renderVisits = function (count) {
         const safe = Number.isFinite(count) && count >= 0 ? Math.floor(count) : 0;
         digits.textContent = String(safe).padStart(6, "0");
@@ -331,9 +330,6 @@ if (digits) {
                 renderVisits(data.visits);
             })
             .catch(function () {
-                if (counterNote) {
-                    counterNote.textContent = "Contador local de este navegador (el contador global se activa al enlazar KV en Cloudflare).";
-                }
                 runLocalFallback();
             });
     } else {
