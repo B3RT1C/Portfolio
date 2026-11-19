@@ -335,7 +335,7 @@ section {
     padding: 0 0 18px;
     color: var(--ink);
     background-color: #000;
-    background-image: radial-gradient(rgba(92, 239, 255, 0.18) 1px, transparent 1.2px);
+    background-image: radial-gradient(rgba(92, 239, 255, 0.42) 1.2px, transparent 1.6px);
     background-size: 18px 18px;
     border: 3px dotted var(--cyan);
     box-shadow: 5px 5px 0 #3a0048;
@@ -773,8 +773,8 @@ h1 {
     margin: 6px 14px 14px;
     padding: 8px 10px;
     background-color: #070712;
-    background-image: linear-gradient(rgba(255, 122, 242, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(92, 239, 255, 0.08) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 122, 242, 0.24) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(92, 239, 255, 0.24) 1px, transparent 1px);
     background-size: 12px 12px;
     border: 2px dashed var(--magenta);
     list-style: none;
@@ -847,8 +847,8 @@ h1 {
     margin: 8px 14px 16px;
     padding: 10px;
     background-color: #070712;
-    background-image: linear-gradient(rgba(255, 122, 242, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(92, 239, 255, 0.08) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(255, 122, 242, 0.24) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(92, 239, 255, 0.24) 1px, transparent 1px);
     background-size: 12px 12px;
     border: 2px dashed var(--magenta);
 }
@@ -943,7 +943,9 @@ footer {
     padding: 0 0 18px;
     color: var(--ink);
     text-align: center;
-    background: #000;
+    background-color: #000;
+    background-image: radial-gradient(rgba(92, 239, 255, 0.42) 1.2px, transparent 1.6px);
+    background-size: 18px 18px;
     border: 3px dotted var(--cyan);
     box-shadow: 5px 5px 0 #3a0048;
 }
