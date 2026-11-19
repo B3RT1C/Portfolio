@@ -65,11 +65,11 @@ html {
 
 @keyframes bg-scroll-nw {
     from {
-        background-position: 0 0, center center;
+        background-position: 0 0, 0 0;
     }
 
     to {
-        background-position: -160px -240px, center center;
+        background-position: -320px -480px, -320px -480px;
     }
 }
 
@@ -82,20 +82,20 @@ body {
     background-color: #040911;
     background-image:
         url("/img/body_background_transparent.gif"),
-        url("/img/acid_grunge_bg.svg");
+        url("/img/seamless_stars_lines.svg");
     background-size:
         160px 240px,
-        cover;
+        320px 480px;
     background-position:
         0 0,
-        center center;
+        0 0;
     background-attachment:
         fixed,
         fixed;
     background-repeat:
         repeat,
-        no-repeat;
-    animation: bg-scroll-nw 18s linear infinite;
+        repeat;
+    animation: bg-scroll-nw 24s linear infinite;
 }
 
 img {
