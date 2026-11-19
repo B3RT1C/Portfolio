@@ -651,6 +651,8 @@ h1 {
 }
 
 .job-body code {
+    display: inline-block;
+    white-space: nowrap;
     padding: 2px 6px;
     color: var(--yellow);
     background: #001f30;
@@ -878,7 +880,7 @@ tech-pill img,
 
 .skills-retro-list li,
 .section .skills-retro-list li,
-.section .skills-retro-list li + li {
+.section .skills-retro-list li+li {
     margin: 0;
 }
 
