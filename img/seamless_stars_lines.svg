@@ -1,48 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="480" viewBox="0 0 320 480">
     <defs>
-        <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
-            <feGaussianBlur stdDeviation="1.5" result="blur" />
-            <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-            </feMerge>
-        </filter>
-
-        <!-- Elegant clean 4-point star -->
-        <g id="star-clean">
-            <path d="M 0,-12 Q 0,0 10,0 Q 0,0 0,12 Q 0,0 -10,0 Q 0,0 0,-12 Z" fill="#5cefff" filter="url(#soft-glow)"/>
-            <circle cx="0" cy="0" r="1.4" fill="#ffffff"/>
+        <!-- Soft, muted 4-point star (low contrast, deep tone) -->
+        <g id="star-subdued-cyan">
+            <path d="M 0,-11 Q 0,0 9,0 Q 0,0 0,11 Q 0,0 -9,0 Q 0,0 0,-11 Z" fill="rgba(92, 239, 255, 0.38)"/>
+            <circle cx="0" cy="0" r="1.2" fill="rgba(180, 245, 255, 0.6)"/>
         </g>
-        <g id="star-magenta-subtle">
-            <path d="M 0,-9 Q 0,0 7.5,0 Q 0,0 0,9 Q 0,0 -7.5,0 Q 0,0 0,-9 Z" fill="#ff55e1" opacity="0.85"/>
-            <circle cx="0" cy="0" r="1.1" fill="#ffffff"/>
+        <g id="star-subdued-magenta">
+            <path d="M 0,-8.5 Q 0,0 7,0 Q 0,0 0,8.5 Q 0,0 -7,0 Q 0,0 0,-8.5 Z" fill="rgba(255, 85, 225, 0.32)"/>
+            <circle cx="0" cy="0" r="1" fill="rgba(255, 190, 245, 0.5)"/>
         </g>
     </defs>
 
     <!-- Deep dark background -->
     <rect width="320" height="480" fill="#040911"/>
 
-    <!-- Subtle ambient wash -->
-    <circle cx="160" cy="240" r="140" fill="rgba(92, 239, 255, 0.035)"/>
+    <!-- Very soft ambient wash -->
+    <circle cx="160" cy="240" r="140" fill="rgba(92, 239, 255, 0.02)"/>
 
     <!-- ========================================================
-         SINGLE CLEAN SEAMLESS DIAGONAL LINE (Slope = -0.75)
-         Wraps cleanly from (0, 360) -> (320, 120)
-         and (0, 120) -> (160, 0) / (160, 480) -> (320, 360)
+         FAINT, SUBTLE ORBITAL LINE (Opacity 0.16)
          ======================================================== -->
-    <g opacity="0.28">
-        <line x1="0" y1="360" x2="320" y2="120" stroke="#5cefff" stroke-width="1" stroke-dasharray="16 8 4 8"/>
-        <line x1="0" y1="120" x2="160" y2="0" stroke="#5cefff" stroke-width="1" stroke-dasharray="16 8 4 8"/>
-        <line x1="160" y1="480" x2="320" y2="360" stroke="#5cefff" stroke-width="1" stroke-dasharray="16 8 4 8"/>
+    <g opacity="0.16">
+        <line x1="0" y1="360" x2="320" y2="120" stroke="#5cefff" stroke-width="0.9" stroke-dasharray="14 8 3 8"/>
+        <line x1="0" y1="120" x2="160" y2="0" stroke="#5cefff" stroke-width="0.9" stroke-dasharray="14 8 3 8"/>
+        <line x1="160" y1="480" x2="320" y2="360" stroke="#5cefff" stroke-width="0.9" stroke-dasharray="14 8 3 8"/>
     </g>
 
     <!-- ========================================================
-         SPARSE, BREATHABLE STARS (Only 2 per entire 320x480 box!)
-         Placed in the open negative space away from the glasses
+         SUBDUED STARS
          ======================================================== -->
-    <!-- Star 1 in upper zone -->
-    <use href="#star-clean" x="230" y="80"/>
-
-    <!-- Star 2 in lower zone -->
-    <use href="#star-magenta-subtle" x="70" y="320"/>
+    <use href="#star-subdued-cyan" x="230" y="80"/>
+    <use href="#star-subdued-magenta" x="70" y="320"/>
 </svg>
