@@ -345,6 +345,11 @@ a.btn88,
     font-weight: bold;
 }
 
+.ws-chg.down {
+    color: #ff3b69;
+    font-weight: bold;
+}
+
 .ws-sep {
     color: #3b5445;
     margin: 0 12px;
