@@ -672,24 +672,6 @@ h1 {
     white-space: nowrap;
 }
 
-.acc-e {
-    position: relative;
-    display: inline-block;
-    margin-right: 0.1em;
-}
-
-.acc-e::after {
-    content: "";
-    position: absolute;
-    top: -0.16em;
-    left: 0.28em;
-    width: 0.22em;
-    height: 0.12em;
-    background: #ff55e1;
-    transform: skew(-25deg) rotate(-18deg);
-    box-shadow: 1px 1px 0 #000, 2px 2px 0 #000;
-}
-
 #nombre {
     display: block;
     width: min(460px, 58vw);
