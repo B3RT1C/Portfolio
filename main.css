@@ -439,10 +439,6 @@ section {
     max-width: none;
 }
 
-.about-copy {
-    margin: 0 16px 4px;
-}
-
 .section a,
 .footer-panel a {
     overflow-wrap: anywhere;
@@ -599,7 +595,9 @@ h1 {
     margin-left: 12px;
 }
 
-.job-body {
+.job-body,
+.about-copy,
+.languages-box {
     position: relative;
     margin: 10px 12px 12px;
     padding: 12px 14px;
@@ -616,31 +614,47 @@ h1 {
     color: #eaf6fd;
 }
 
-.job-body>p {
+.job-body>p,
+.about-copy>p,
+.languages-box>p {
     margin: 0 0 10px !important;
     color: #d6f2ff;
     border-left: 3px solid var(--yellow);
     padding-left: 10px;
 }
 
-.job-body>ul {
+.about-copy>p:last-child,
+.job-body>p:last-child,
+.languages-box>p:last-child {
+    margin-bottom: 0 !important;
+}
+
+.job-body>ul,
+.about-copy>ul,
+.languages-box>ul {
     margin: 0 !important;
     padding-left: 0 !important;
     list-style: none !important;
 }
 
-.job-body li {
+.job-body li,
+.about-copy li,
+.languages-box li {
     position: relative;
     padding-left: 20px;
     margin-bottom: 8px;
     color: #eaf6fd;
 }
 
-.job-body li:last-child {
+.job-body li:last-child,
+.about-copy li:last-child,
+.languages-box li:last-child {
     margin-bottom: 0;
 }
 
-.job-body li::before {
+.job-body li::before,
+.about-copy li::before,
+.languages-box li::before {
     content: "\25BA";
     position: absolute;
     left: 0;
