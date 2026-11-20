@@ -489,3 +489,162 @@ if (webring && "fetch" in window) {
         e.preventDefault();
     }, { passive: false });
 })();
+
+/* ==========================================================================
+   Retro Crystal Orb: 3D Surface Globe Raymapper
+   Mapea el retrato y la textura sobre la superficie curva de un globo 3D
+   que gira continuamente, cubierto por la cúpula de cristal y reflejos.
+   ========================================================================== */
+(function initGlobe() {
+    const canvas = document.getElementById("globeCanvas");
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    let texCanvas, texCtx;
+    const texW = 1024;
+    const texH = 512;
+
+    const size = 185;
+    const cx = size / 2;
+    const cy = size / 2;
+    const R = 86; // Radio del globo interior bajo el cristal
+    let angle = 0;
+    const slices = 120;
+    const dx = (2 * R) / slices;
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    let isRunning = false;
+    let meLoaded = false;
+    let bgLoaded = false;
+
+    const imgMe = new Image();
+    imgMe.src = "/img/me.png";
+
+    const imgBg = new Image();
+    imgBg.src = "/img/header_background.jpeg";
+
+    function buildTexture() {
+        texCanvas = document.createElement("canvas");
+        texCanvas.width = texW;
+        texCanvas.height = texH;
+        texCtx = texCanvas.getContext("2d");
+
+        // Fondo dossier repetido en las 2 mitades del mapa equirrectangular
+        texCtx.drawImage(imgBg, 0, 0, texW / 2, texH);
+        texCtx.drawImage(imgBg, texW / 2, 0, texW / 2, texH);
+
+        // Velo azul noche profundo para integrar con la atmósfera del header
+        texCtx.fillStyle = "rgba(5, 18, 35, 0.38)";
+        texCtx.fillRect(0, 0, texW, texH);
+
+        // Retrato cara frontal (en 25% de la circunferencia)
+        const pSize = 390;
+        const pY = (texH - pSize) / 2 + 10;
+        texCtx.drawImage(imgMe, (texW * 0.25) - (pSize / 2), pY, pSize, pSize);
+
+        // Retrato cara trasera (en 75% de la circunferencia, para rotación continua)
+        texCtx.drawImage(imgMe, (texW * 0.75) - (pSize / 2), pY, pSize, pSize);
+    }
+
+    function drawFrame() {
+        ctx.save();
+        ctx.setTransform(2, 0, 0, 2, 0, 0); // 2x DPI sharpness
+        ctx.clearRect(0, 0, size, size);
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, R, 0, Math.PI * 2);
+        ctx.clip();
+
+        for (let i = 0; i < slices; i++) {
+            const x = -R + (i + 0.5) * dx;
+            const normX = x / R;
+            if (Math.abs(normX) >= 1) continue;
+
+            const z = Math.sqrt(1 - normX * normX);
+            const phi = Math.asin(normX);
+
+            const lon = phi - angle;
+            const u = ((lon / (Math.PI * 2)) % 1 + 1) % 1;
+
+            const sx = u * texW;
+            const sw = Math.max(1, (dx / (z * R)) * (texW / (Math.PI * 2)));
+
+            const sliceH = z * R * 2;
+            const drawX = cx + x;
+            const drawY = cy - sliceH / 2;
+            const drawW = dx + 0.65; // Evita artefactos de separación
+
+            // Sombreado 3D esférico
+            const light = 0.45 + 0.55 * z;
+            ctx.globalAlpha = light;
+
+            ctx.drawImage(
+                texCanvas,
+                sx, 0, Math.min(sw, texW - sx), texH,
+                drawX, drawY, drawW, sliceH
+            );
+        }
+
+        ctx.restore();
+    }
+
+    function loop() {
+        if (!isRunning) return;
+        drawFrame();
+        angle += 0.012;
+        requestAnimationFrame(loop);
+    }
+
+    function startLoop() {
+        if (prefersReducedMotion.matches) {
+            angle = 0;
+            drawFrame();
+            return;
+        }
+        if (!isRunning) {
+            isRunning = true;
+            requestAnimationFrame(loop);
+        }
+    }
+
+    function checkReady() {
+        if (meLoaded && bgLoaded) {
+            buildTexture();
+            startLoop();
+        }
+    }
+
+    imgMe.onload = function () {
+        meLoaded = true;
+        checkReady();
+    };
+    imgBg.onload = function () {
+        bgLoaded = true;
+        checkReady();
+    };
+
+    if (imgMe.complete && imgMe.naturalWidth) meLoaded = true;
+    if (imgBg.complete && imgBg.naturalWidth) bgLoaded = true;
+    checkReady();
+
+    document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+            isRunning = false;
+        } else if (!prefersReducedMotion.matches && meLoaded && bgLoaded) {
+            isRunning = true;
+            requestAnimationFrame(loop);
+        }
+    });
+
+    prefersReducedMotion.addEventListener("change", function (e) {
+        if (e.matches) {
+            isRunning = false;
+            angle = 0;
+            if (meLoaded && bgLoaded) drawFrame();
+        } else {
+            startLoop();
+        }
+    });
+})();
