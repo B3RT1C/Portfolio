@@ -12,7 +12,7 @@
         <meta property="og:type" content="website">
         <meta property="og:locale" content="es_ES">
         <link rel="icon" href="/img/beartic.png" type="image/png">
-        <link rel="stylesheet" href="/main.css?v=20261120e">
+        <link rel="stylesheet" href="/main.css?v=20261120f">
     </head>
     <body>
         <a class="skip" href="#top">Saltar al contenido</a>
@@ -129,8 +129,16 @@
                     </div>
                     <div class="hero-main">
                         <div class="crystal-orb" role="img" aria-label="Retrato ilustrado de Alberto Pérez Navarro en esfera de cristal retro">
-                            <canvas id="globeCanvas" width="370" height="370" aria-hidden="true"></canvas>
-                            <img id="me" class="sr-only" src="/img/me.png" alt="Retrato ilustrado de Alberto Pérez Navarro">
+                            <div class="orb-stage">
+                                <div class="orb-card-2d">
+                                    <div class="card-face front">
+                                        <img id="me" src="/img/me.png" width="440" height="440" alt="Retrato ilustrado de Alberto Pérez Navarro">
+                                    </div>
+                                    <div class="card-face back" aria-hidden="true">
+                                        <img src="/img/me.png" width="440" height="440" alt="">
+                                    </div>
+                                </div>
+                            </div>
                             <div class="glass-overlay" aria-hidden="true">
                                 <div class="glass-specular"></div>
                                 <div class="glass-glint"></div>
@@ -547,6 +555,6 @@
                 .task-tray { display: none !important; }
             </style>
         </noscript>
-        <script src="/app.js?v=20261120e"></script>
+        <script src="/app.js?v=20261120f"></script>
     </body>
 </html>
