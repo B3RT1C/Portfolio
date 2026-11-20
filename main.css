@@ -672,7 +672,7 @@ h1 {
     font-size: clamp(0.95rem, 2.9vw, 2.1rem);
     line-height: 1;
     letter-spacing: 0.5px;
-    text-transform: lowercase;
+    text-transform: none;
     color: #ff55e1;
     text-shadow:
         1px 1px 0 #000,
